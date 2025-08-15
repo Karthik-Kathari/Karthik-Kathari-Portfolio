@@ -996,10 +996,11 @@ footer img {
 }
 
 .header-title {
-  font-size: 36px;
-  margin-bottom: 30px;
+  font-size: 38px;
+  margin-bottom: 5px!important;
   font-weight: 700;
   text-transform: uppercase; /* Uppercase for emphasis */
+  letter-spacing: 5px;
 }
 
 .abilities {
@@ -1012,30 +1013,37 @@ footer img {
 
 .category {
   margin-bottom: 30px; /* Space between categories */
+ 
 }
 
 .category-title {
   font-size: 28px;
   font-weight: 500;
-  margin-bottom: 15px;
+  margin-bottom: 5px!important;
   text-decoration: underline; /* Underline for emphasis */
 }
 
 .tools-list-horizontal {
   list-style-type: none;
-  padding: 0;
   display: flex;
   justify-content: center;
+  align-items: center;
+  text-align: center;
   flex-wrap: wrap; /* Allow wrapping for responsiveness */
 }
 
 .tools-list-horizontal li {
-  background: #222; /* Dark grey for list items */
+  background: #252424; /* Dark grey for list items */
   border-radius: 8px;
   padding: 10px 15px;
-  margin: 5px;
+  margin: 15px;
   transition: background 0.3s, transform 0.3s; /* Added transform for effect */
   font-size: 16px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .tools-list-horizontal li:hover {
@@ -1053,11 +1061,12 @@ footer img {
   background:rgb(46, 46, 46); /* Dark grey for icon boxes */
   border-radius: 8px;
   margin: 10px;
-  padding: 18px;
+  padding: 12px;
   text-align: center;
   transition: background 0.3s, transform 0.3s; /* Added transform for effect */
   width: 100px; /* Fixed width for icons */
   color: #ffffff; /* Ensure icon color is white */
+  text-align: center;
 }
 .icon-box img {
  padding-top: -30px;
@@ -1082,6 +1091,10 @@ footer img {
   justify-content: center; /* Center the cards */
 }
 
+/* Soft Skill Head */
+#abilities > div.personal-skills > h2{
+text-decoration: underline;
+}
 .soft-skill-card {
   background: rgb(46, 46, 46); /* Dark grey for soft skill cards */
   border-radius: 8px;
@@ -1272,7 +1285,6 @@ footer img {
   box-shadow: 1px 2px 15px 3px white!important;
 
 }
-
 
 .certificate-entry:hover h3 {
   color: rgb(236, 17, 61); 
