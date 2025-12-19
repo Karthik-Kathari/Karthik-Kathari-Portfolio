@@ -1,10 +1,10 @@
 // Initialize EmailJS
-emailjs.init("TtPSJLci-vr6zXpX_");
+emailjs.init("DOz9Qddk_BiZ8Ovb8");
 
 // email sending function from the contact form:
 function sendEmail(event) {
   event.preventDefault();
-  emailjs.sendForm("service_bee0tsn", "template_er99a2z", "#contactForm")
+  emailjs.sendForm("service_m0ma4ei", "template_er99a2z", "#contactForm", "DOz9Qddk_BiZ8Ovb8")
     .then(function (response) {
       alert("Email sent successfully!");
     }, function (error) {
@@ -35,28 +35,6 @@ $(document).ready(function () {
     offset: '90%'
   });
 
-  // Smooth scrolling for anchor links
-  $('a[href^="#"]').on('click', function (e) {
-    e.preventDefault();
-    var target = $(this.hash);
-    $('html, body').animate({
-      scrollTop: target.offset().top
-    }, 1000);
-  });
-
-  // Show/hide scroll-up button on scroll
-  $(window).scroll(function () {
-    if ($(this).scrollTop() > 100) {
-      $('.scroll-up-btn').fadeIn();
-    } else {
-      $('.scroll-up-btn').fadeOut();
-    }
-  });
-
-  // Scroll-up button click scroll to top
-  $(".scroll-up-btn").click(function () {
-    $("html, body").scrollTop(0); // instantly jumps to top
-  });
 
   // Toggle menu on menu button click
   $('.menu-btn').click(function () {
@@ -153,8 +131,6 @@ $(document).ready(function () {
 
 
 
-
-
   // Toggle navbar/menu
   $(".menu-btn").click(function () {
     $(".navbar .menu").toggleClass("active");
@@ -231,3 +207,36 @@ image.addEventListener('mousemove', (e) => {
 image.addEventListener('mouseleave', () => {
   image.style.transform = `rotateX(0deg) rotateY(0deg)`;
 });
+
+// Certificates scrollable area drag-scroll functionality
+const scrollContainer = document.getElementById("scrollable-area-certificates");
+
+let scrollAmount = 0;
+const scrollSpeed = 3;
+let isPaused = false;
+
+scrollContainer.addEventListener("mouseenter", () => {
+  isPaused = true;
+});
+
+scrollContainer.addEventListener("mouseleave", () => {
+  isPaused = false;
+});
+
+function autoScrollCertificates() {
+  if (!isPaused) {
+    scrollAmount += scrollSpeed;
+    scrollContainer.scrollLeft = scrollAmount;
+
+    if (
+      scrollContainer.scrollLeft + scrollContainer.clientWidth >=
+      scrollContainer.scrollWidth
+    ) {
+      scrollAmount = 0;
+    }
+  }
+
+  requestAnimationFrame(autoScrollCertificates);
+}
+
+autoScrollCertificates();
