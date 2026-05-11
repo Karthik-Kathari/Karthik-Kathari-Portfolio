@@ -7,937 +7,1689 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Karthik Kathari Portfolio</title>
 
+  <!-- Tailwind CSS Play CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { crimson: '#dc143c' },
+          fontFamily: {
+            poppins: ['Poppins','sans-serif'],
+            ubuntu:  ['Ubuntu','sans-serif'],
+            pacifico:['Pacifico','cursive']
+          }
+        }
+      }
+    }
+  </script>
 
-  <!-- ✅ Custom Styles -->
-  <link rel="stylesheet" href="css/styles.css">
-  <!-- <link rel="stylesheet" href="css/mediaquery.css"> -->
-  <link rel="stylesheet" href="css/md.css">
+  <!-- Custom CSS (only JS-driven states, pseudo-elements, 3rd-party overrides) -->
+  <link rel="stylesheet" href="css/custom.css">
 
-  <!-- ✅ Bootstrap CSS (CDN) -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-ZvpUoO/+PpLqKAXbIsTgy8mN0F5Gb4ttvTT0Dvb7Y0peBAMj6df8v7PfmW23T0Ufo" crossorigin="anonymous">
-
-  <!-- ✅ Owl Carousel CSS (CDN) -->
+  <!-- Owl Carousel CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-  <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
 
-  <!-- ✅ Font Awesome (CDN) -->
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.0/css/all.css">
 
-  <!-- ✅ jQuery (CDN) -->
+  <!-- jQuery -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-  <!-- ✅ Bootstrap JS Bundle (CDN) -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-mQ93h5SiCmQ8ReyONc8OUOtmBzWyfiF61eF5p7I3JX4/sAnZqU61EdnQtEK0Tjqm"
-    crossorigin="anonymous"></script>
-
-  <!-- ✅ Owl Carousel JS (CDN) -->
+  <!-- Owl Carousel JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
-  <!-- ✅ Typed.js (CDN) -->
+  <!-- Typed.js -->
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 
-  <!-- ✅ Waypoints.js (CDN) -->
+  <!-- Waypoints.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
 
-  <!-- ✅ EmailJS (CDN) -->
+  <!-- EmailJS -->
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3.2.0/dist/email.min.js"></script>
 </head>
 
-<body>
+<body class="bg-[#0d0d12] text-white font-poppins pt-0">
+
+  <!-- Custom Cursor -->
+  <div class="custom-cursor" id="cursor"></div>
+
+  <!-- Scroll-up button -->
   <div class="scroll-up-btn">
     <i class="fas fa-angle-double-up"></i>
   </div>
-  <nav class="navbar">
-    <div class="max-width">
+
+  <!-- ═══ NAVBAR ════════════════════════════════════════════ -->
+  <nav class="navbar fixed top-0 left-0 w-full z-[9999] bg-transparent">
+    <div class="max-w-[1300px] mx-auto px-6 py-4 flex items-center justify-between relative">
       <div class="logo">
-        <a href="#">Portfo<span>lio.</span></a>
+        <a href="#" class="text-3xl font-pacifico text-white transition-colors duration-300">
+          Portfo<span class="logo-span text-crimson">lio.</span>
+        </a>
       </div>
-      <ul class="menu">
-        <li><a href="#home" class="menu-btn">Home</a></li>
-        <li><a href="#about" class="menu-btn">About</a></li>
-        <li><a href="#skills" class="menu-btn">Skills</a></li>
-        <li><a href="#projects" class="menu-btn">Projects</a></li>
-        <li><a href="#Experience" class="menu-btn">Experience</a></li>
-        <li><a href="#Certificate" class="menu-btn">Certificate</a></li>
-        <li><a href="#Achievement" class="menu-btn">Achievement</a></li>
-        <li><a href="#contact" class="menu-btn">Contact</a></li>
+      <ul class="nav-menu gap-2 list-none items-center">
+        <li><a href="#home"        class="nav-link text-white font-ubuntu font-medium text-base px-3 py-2 rounded-lg hover:text-crimson transition-colors duration-300">Home</a></li>
+        <li><a href="#about"       class="nav-link text-white font-ubuntu font-medium text-base px-3 py-2 rounded-lg hover:text-crimson transition-colors duration-300">About</a></li>
+        <li><a href="#skills"      class="nav-link text-white font-ubuntu font-medium text-base px-3 py-2 rounded-lg hover:text-crimson transition-colors duration-300">Skills</a></li>
+        <li><a href="#projects"    class="nav-link text-white font-ubuntu font-medium text-base px-3 py-2 rounded-lg hover:text-crimson transition-colors duration-300">Projects</a></li>
+        <li><a href="#Experience"  class="nav-link text-white font-ubuntu font-medium text-base px-3 py-2 rounded-lg hover:text-crimson transition-colors duration-300">Experience</a></li>
+        <li><a href="#Certificate" class="nav-link text-white font-ubuntu font-medium text-base px-3 py-2 rounded-lg hover:text-crimson transition-colors duration-300">Certificate</a></li>
+        <li><a href="#Achievement" class="nav-link text-white font-ubuntu font-medium text-base px-3 py-2 rounded-lg hover:text-crimson transition-colors duration-300">Achievement</a></li>
+        <li><a href="#contact"     class="nav-link text-white font-ubuntu font-medium text-base px-3 py-2 rounded-lg hover:text-crimson transition-colors duration-300">Contact</a></li>
       </ul>
-      <div class="menu-btn">
-        <i class="fas fa-bars"></i>
+      <div class="menu-toggle hidden text-white text-2xl cursor-pointer" style="z-index:1002;position:relative;">
+        <i class="fas fa-bars pointer-events-none"></i>
       </div>
     </div>
   </nav>
-  <section class="home" id="home">
-    <video autoplay muted loop class="video-background" playsinline preload="auto"
+
+  <!-- ═══ HERO ══════════════════════════════════════════════ -->
+  <section id="home" class="relative flex items-center min-h-screen overflow-hidden font-ubuntu">
+    <!-- Video Background -->
+    <video autoplay muted loop playsinline preload="auto" class="video-background"
       src="img/10755266-hd_3840_2160_30fps.mp4"></video>
+    
+    <!-- Lighter gradient overlay so video is visible -->
+    <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-black/20 z-0"></div>
+    <!-- Additional bottom gradient for smooth transition -->
+    <div class="absolute inset-0 bg-gradient-to-t from-[#0d0d12] via-transparent to-transparent z-0"></div>
 
-    <div class="max-width">
-      <div class="home-content">
-        <div class="text-1">Hello 👋 I'm</div>
-        <div class="text-2">Karthik Kathari</div>
-        <div class="text-3">And I'm a <span class="typing"></span><span class="typed-cursor" aria-hidden="true">|</span>
-        </div>
-        <a href="https://www.linkedin.com/in/karthik-kathari-434495154/" target="_blank"
-          style="font-size: 22px; border-radius: 10px; ">Linkedin
-          <i class="fas fa-angle-right"></i></a>
-        <a href="https://drive.google.com/file/d/1p-Az01YWxqQRohK5JQ2aMSqXa6I2iPu9/view?usp=sharing" target="_blank"
-          download="KARTHIK_KATHARI_Resume_2025" style="font-size: 22px; border-radius: 10px;">Download CV <i
-            class="fas fa-angle-right"></i></a>
-      </div>
-    </div>
-  </section>
-
-  <section class="about" id="about">
-    <div class="max-width frame">
-      <!-- <h1 class="header-title fade-in">About Me</h1> -->
-      <div class="about-content">
-        <div class="left">
-          <img src="img/mypic.jpeg" alt="Karthik Kathari" id="myphoto">
-          <!-- <div class="social-buttons">
-                        <div class="button1">
-                            <div class="icon">
-                                <a href="https://www.linkedin.com/in/karthik-kathari-434495154/" target="_blank"
-                                    rel="noreferrer">
-                                    <i class="fab fa-linkedin"></i>
-                                </a>
-                            </div>
-                            <span>LinkedIn</span>
-                        </div>
-
-                        <div class="button1">
-                            <div class="icon">
-                                <a href="https://github.com/Karthik-Kathari" target="_blank" rel="noreferrer">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                            </div>
-                            <span>GitHub</span>
-                        </div>
-                    </div> -->
-        </div>
-        <div class="right">
-          <div class="text">I'm Karthik Kathari, a <span class="typing2"></span><span
-              class="typed-cursor typed-cursor--blink" aria-hidden="true">|</span></div>
-
-          <p>
-            Frontend-focused <strong>Full Stack Developer</strong> with a strong foundation in building responsive,
-            secure, and
-            user-centric web applications. I specialize in creating clean, intuitive, and high-performing interfaces,
-            supported
-            by reliable full-stack capabilities, with a strong focus on performance, accessibility, and security.
-          </p>
-
-          <p>
-            I work across modern <strong> frontend and full-stack web technologies</strong>, applying web security best
-            practices to
-            deliver
-            visually appealing and trustworthy user experiences. I also leverage <strong>AI-driven tools</strong> to
-            enhance
-            productivity, improve code quality, and introduce efficient, innovative development approaches.
-          </p>
-
-          <p>
-            Beyond technical work, I bring collaboration and leadership experience as an External Field
-            Instructor
-            and Student Ambassador, working closely with teams and stakeholders. I also contribute to
-            social-impact initiatives through volunteering withTheirWorld and involvement with
-            Humane World for Animals India Foundation, supporting advocacy and animal-welfare causes.
-          </p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <section class="skills" id="skills">
-    <div class="main-container">
-      <h1 class="header-title fade-in">Skills</h1>
-      <section class="abilities" id="abilities">
-        <div class="max-container">
-          <div class="abilities-content">
-            <div class="category">
-              <div class="category-title">&gt; Operating System</div>
-              <div class="icons-container">
-                <div class="icon-box">
-                  <img width="24" height="24" src="https://img.icons8.com/color/48/windows-10.png" alt="windows-10" />
-                  <br>
-                  <span>Windows</span>
-                </div>
-                <div class="icon-box">
-                  <img width="24" height="24" src="https://img.icons8.com/color/48/debian.png" alt="debian" /> <br>
-                  <span>Debian</span>
-                </div>
-                <div class="icon-box">
-                  <img width="24" height="24" src="https://img.icons8.com/color/48/mac-os--v1.png" alt="mac-os--v1" />
-                  <br>
-                  <span>macOS</span>
-                </div>
-                <div class="icon-box">
-                  <img width="35" height="35" src="https://img.icons8.com/plasticine/100/kali-linux.png"
-                    alt="kali-linux" /><br>
-                  <span style="position:relative; bottom: 8px;"> &nbsp; Kali</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="abilities-content">
-          <div class="category">
-            <div class="category-title">&gt; Tools</div>
-            <ul class="tools-list-horizontal">
-              <li><img width="24" height="24" src="https://img.icons8.com/color/48/git.png" alt="git" />
-                &nbsp;Git</li>
-              <li><img width="24" height="24" src="https://img.icons8.com/ios-filled/50/github.png"
-                  alt="github" />&nbsp;GitHub</li>
-              <li><img width="24" height="24" src="https://img.icons8.com/fluency/48/visual-studio-code-2019.png"
-                  alt="visual-studio-code-2019" />&nbsp;Vs Code</li>
-
-              <li><img width="24" height="24"
-                  src="https://res.cloudinary.com/postman/image/upload/t_team_logo/v1629869194/team/2893aede23f01bfcbd2319326bc96a6ed0524eba759745ed6d73405a3a8b67a8"
-                  alt="Postman Logo" />&nbsp;Postman API
-              </li>
-              <li><img width="24" height="24" src="https://img.icons8.com/?size=100&id=24895&format=png&color=000000"
-                  alt="Npm Logo" />&nbsp;npm
-              </li>
-              <li><img width="24" height="24" src="https://img.icons8.com/color/48/adobe-xd--v1.png"
-                  alt="adobe-xd--v1" />&nbsp;Adobe XD</li>
-              <li><img width="24" height="24" src="https://img.icons8.com/fluency/48/canva.png"
-                  alt="canva" />&nbsp;Canva</li>
-              <li><img width="24" height="24"
-                  src="https://img.icons8.com/?size=100&id=zfHRZ6i1Wg0U&format=png&color=000000" alt="">&nbsp;Figma</li>
-              <li><img width="24" height="24"
-                  src="https://www.cybertriage.com/wp-content/uploads/2023/05/Autopsy-Dog-Graphic-800x788.png"
-                  alt="">&nbsp;Autopsy</li>
-              <li><img width="24" height="24" src="https://img.icons8.com/color/48/nmap.png" alt="nmap" />&nbsp;Nmap
-              </li>
-
-            </ul>
-          </div>
-        </div>
-
-        <!--below section add  Languages and FrameworkLanguages and Framework -->
-        <div class="abilities-content">
-          <div class="category">
-            <div class="category-title">&gt; Languages and Framework </div>
-            <div class="icons-container">
-              <div class="icon-box">
-                <img width="24" height="24" src="https://img.icons8.com/color/48/html-5--v1.png" alt="html-5--v1" />
-                <br>
-                <span>HTML5</span>
-              </div>
-              <div class="icon-box">
-                <img width="24" height="24" src="https://img.icons8.com/color/48/css3.png" alt="css3" />
-                <span style="display:flex; align-items: center; justify-content: center;padding: 3px;">CSS</span>
-              </div>
-              <div class="icon-box">
-                <img width="24" height="24" src="https://img.icons8.com/color/48/javascript--v1.png"
-                  alt="javascript--v1" />
-                <span style="display:flex; align-items: center; justify-content: center;padding: 3px;">JavaScript</span>
-              </div>
-              <div class="icon-box">
-                <img width="24" height="24" src="https://img.icons8.com/color-glass/48/bootstrap.png" alt="bootstrap" />
-                <span style="display:flex; align-items: center; justify-content: center;padding: 3px;">Bootstrap</span>
-              </div>
-              <div class="icon-box">
-                <img width="24" height="24"
-                  src="https://img.icons8.com/external-tal-revivo-shadow-tal-revivo/24/external-jquery-is-a-javascript-library-designed-to-simplify-html-logo-shadow-tal-revivo.png"
-                  alt="external-jquery-is-a-javascript-library-designed-to-simplify-html-logo-shadow-tal-revivo" /> <br>
-                <span>jQuery</span>
-              </div>
-              <div class="icon-box">
-                <img width="24" height="24" src="https://img.icons8.com/color/48/tailwind_css.png" alt="tailwind_css" />
-                <br>
-                <span>Tailwind</span>
-              </div>
-              <div class="icon-box">
-                <img width="25" height="25"
-                  src="https://img.icons8.com/?size=100&id=asWSSTBrDlTW&format=png&color=000000" /> <br>
-                <span> React</span>
-              </div>
-              <div class="icon-box">
-                <img width="25" height="25"
-                  src="https://img.icons8.com/?size=100&id=b6vIINYN0kfW&format=png&color=000000" /> <br>
-                <span>Redux</span>
-              </div>
-              <div class="icon-box">
-                <img width="25" height="25"
-                  src="https://img.icons8.com/?size=100&id=hsPbhkOH4FMe&format=png&color=000000" /> <br>
-                <span>Node.js</span>
-              </div>
-              <div class="icon-box">
-                <img width="25" height="25"
-                  src="https://img.icons8.com/?size=100&id=kg46nzoJrmTR&format=png&color=000000" /> <br>
-                <span>Express.js</span>
-              </div>
-              <div class="icon-box">
-                <img width="25" height="25" src="https://img.icons8.com/?size=100&id=21888&format=png&color=000000" />
-                <br>
-                <span>REST API Integration</span>
-              </div>
-              <div class="icon-box">
-                <img width="25" height="25"
-                  src="https://img.icons8.com/?size=100&id=cREyrHivHRHF&format=png&color=000000" /> <br>
-                <span>MongoDB</span>
-              </div>
-
-            </div>
-
-          </div>
-        </div>
-        <!--above section added   -->
-        <div class="personal-skills">
-          <h2>&gt; Soft Skills</h2>
-          <div class="skill-cards">
-            <div class="soft-skill-card"><img width="24" height="24"
-                src="https://img.icons8.com/color/48/creativity-and-resourcefulness.png"
-                alt="creativity-and-resourcefulness" /> Problem-solving</div>
-            <div class="soft-skill-card"><img width="24" height="24"
-                src="https://img.icons8.com/fluency/48/critical-thinking.png" alt="critical-thinking" /> Critical
-              Thinking</div>
-            <div class="soft-skill-card"><img width="24" height="24"
-                src="https://img.icons8.com/color/48/collaborating-in-circle.png" alt="collaborating-in-circle" /> Team
-              Collaboration</div>
-            <div class="soft-skill-card"><img width="24" height="24" src="https://img.icons8.com/scribby/50/eye.png"
-                alt="eye" />Attention to Detail</div>
-            <div class="soft-skill-card"><img width="24" height="24"
-                src="https://img.icons8.com/pulsar-gradient/48/creativity.png" alt="creativity" />Creativity</div>
-            <div class="soft-skill-card"><img width="24" height="24"
-                src="https://img.icons8.com/external-others-papa-vector/78/external-Active-Listening-digital-skills-others-papa-vector.png"
-                alt="external-Active-Listening-digital-skills-others-papa-vector" /> Active Listening</div>
-            <div class="soft-skill-card"><img width="24" height="24"
-                src="https://img.icons8.com/external-wanicon-lineal-color-wanicon/64/external-time-management-business-administration-wanicon-lineal-color-wanicon.png"
-                alt="external-time-management-business-administration-wanicon-lineal-color-wanicon" />Time Management
-            </div>
-            <div class="soft-skill-card"><i class="fas fa-users-cog soft-icon"></i> Adaptability</div>
-            <div class="soft-skill-card"><img width="24" height="24"
-                src="https://img.icons8.com/external-smashingstocks-flat-smashing-stocks/66/external-Self-Motivation-smooth-conceptual-smashingstocks-flat-smashing-stocks.png"
-                alt="external-Self-Motivation-smooth-conceptual-smashingstocks-flat-smashing-stocks" /> Self-motivation
-            </div>
-            <div class="soft-skill-card"><img width="24" height="24"
-                src="https://img.icons8.com/color/48/continuous.png" alt="continuous" /> Continuous Learning</div>
-          </div>
-        </div>
-      </section>
-    </div>
-  </section>
-
-  <!--------------------Projects ----------------------------------->
-
-  <section class="projects" id="projects">
-    <div class="max-width">
-      <h2 class="title fadein showme">My Projects</h2>
-      <div class="carousel owl-carousel owl-loaded owl-drag">
-        <div class="owl-stage-outer">
-          <div class="owl-stage">
-
-            <!-- Unique Project 1: Register_login_secrets -->
-            <div class="owl-item" style="width: 366.667px; margin-right: 20px;">
-              <div class="card">
-                <a href="https://register-login-secret-web.onrender.com/" target="_blank" rel="noreferrer"
-                  title="register-login-secret">
-                  <div class="box">
-                    <img src="img/Register_login_secrets.png" alt="Register_login_secrets">
-                  </div>
-                </a>
-                <a href="https://register-login-secret-web.onrender.com/" target="_blank" rel="noreferrer"
-                  title="Register_login_secrets">
-                  <p>Register-Login-Secret</p>
-                </a>
-                <p>EJS | Node.js | Express.js | MongoDB Atlas
-                </p>
-              </div>
-            </div>
-
-            <!-- Unique Project 2: PokémonAPI -->
-            <div class="owl-item" style="width: 366.667px; margin-right: 20px;">
-              <div class="card">
-                <a href="https://karthik-kathari.github.io/pokemon-explorer/ " title="pokemon-explorer_proejct">
-                  <div class="box">
-                    <img src="./img/pokemon.png" alt="PokémonAPI">
-                  </div>
-                </a>
-                <a href="https://karthik-kathari.github.io/pokemon-explorer/ " title="PokémonAPI">
-                  <p>PokémonAPI</p>
-                </a>
-                <p>HTML | CSS | JS | React | API</p>
-              </div>
-            </div>
-
-            <!-- Unique Project 3: Keeper App React -->
-            <div class="owl-item" style="width: 366.667px; margin-right: 20px;">
-              <div class="card">
-                <a href="https://keeper-app-project-react.netlify.app/" target="_blank" rel="noreferrer"
-                  title="Keeper_App_React">
-                  <div class="box">
-                    <img src="img/keepernotes.png" alt="Keeper_App_React">
-                  </div>
-                </a>
-                <a href="https://keeper-app-project-react.netlify.app/" target="_blank" rel="noreferrer"
-                  title="Keeper_App_React">
-                  <p>Keeper_App_React</p>
-                </a>
-                <p>HTML | CSS | JavaScript | React.js</p>
-              </div>
-            </div>
-
-            <!-- Unique Project 4: MediaQuery-Kit-CLI-->
-            <div class="owl-item" style="width: 366.667px; margin-right: 20px;">
-              <div class="card">
-                <a href="https://karthik-kathari.github.io/kmk-mediaquery-kit-landing-site/" target="_blank"
-                  rel="noreferrer" title="MediaQuery-Kit-CLI">
-                  <div class="box">
-                    <img src="img/kmk-mediaquery-kit.png" alt="MediaQuery-Kit-CLI">
-                  </div>
-                </a>
-                <a href="https://karthik-kathari.github.io/kmk-mediaquery-kit-landing-site/" target="_blank"
-                  rel="noreferrer" title="MediaQuery-Kit-CLI">
-                  <p>MediaQuery-Kit-CLI</p>
-                </a>
-                <p>HTML | CSS | JavaScript | CLI-Tool</p>
-              </div>
-            </div>
-
-            ==========================================
-            <!-- Unique Project 5: SportyEcom -->
-            <div class="owl-item" style="width: 366.667px; margin-right: 20px;">
-              <div class="card">
-                <a href="https://karthik-kathari.github.io/Ecommerce_Website/index.html" target="_blank"
-                  rel="noreferrer" title="Sidcupfamilygolf_animation_proejct">
-                  <div class="box">
-                    <img src="./img/Ecommerce_with_Login.png" alt="SportyEcom">
-                  </div>
-                </a>
-                <a href="https://karthik-kathari.github.io/Ecommerce_Website/index.html" target="_blank"
-                  rel="noreferrer" title="SportyEcom">
-                  <p>SportyEcom</p>
-                </a>
-                <p>HTML | CSS | JS | GSAP</p>
-              </div>
-            </div>
-
-            <!-- Unique Project 6: SidCupFamilyGolf_Animation -->
-            <div class="owl-item" style="width: 366.667px; margin-right: 20px;">
-              <div class="card">
-                <a href="https://karthik-kathari.github.io/SidcupGolfCenter/" target="_blank" rel="noreferrer"
-                  title="Sidcupfamilygolf_animation_proejct">
-                  <div class="box">
-                    <img src="./img/sidcupfamilygolf.png" alt="animation_proejct">
-                  </div>
-                </a>
-                <a href="https://karthik-kathari.github.io/SidcupGolfCenter/" target="_blank" rel="noreferrer"
-                  title="Sidcupfamilygolf_animation_proejct">
-                  <p>SidCupFamilyGolf_Animation</p>
-                </a>
-                <p>HTML | CSS | JS | GSAP</p>
-              </div>
-            </div>
-
-            <!-- Unique Project 7: Amazon_Clone -->
-            <div class="owl-item" style="width: 366.667px; margin-right: 20px;">
-              <div class="card">
-                <a href="https://karthik-kathari.github.io/Amazon_Clone_Project/" target="_blank" rel="noreferrer"
-                  title="Amazon_Clone_Project">
-                  <div class="box">
-                    <img src="./img/amazon_clone_project.png" alt="Amazon_Clone_Project">
-                  </div>
-                </a>
-                <a href="https://karthik-kathari.github.io/Amazon_Clone_Project/" target="_blank" rel="noreferrer"
-                  title="Amazon_Clone_Project">
-                  <p>Amazon_Clone</p>
-                </a>
-                <p>HTML | CSS | JS</p>
-              </div>
-            </div>
-
-            <!-- Unique Project 8: Omnifood: Healthy Meals -->
-            <div class="owl-item" style="width: 366.667px; margin-right: 20px;">
-              <div class="card">
-                <a href="https://healthy-food-website-project.netlify.app/" target="_blank" rel="noreferrer"
-                  title="Omnifood: Healthy Meals">
-                  <div class="box">
-                    <img src="./img/omnifood.png" alt="Omnifood: Healthy Meals">
-                  </div>
-                </a>
-                <a href="https://healthy-food-website-project.netlify.app/" target="_blank" rel="noreferrer"
-                  title="Omnifood: Healthy Meals">
-                  <p>Omnifood: Healthy Meals</p>
-                </a>
-                <p>HTML | CSS | Bootstrap | JQuery</p>
-              </div>
-            </div> <!-- first code sent-->
-
-            <!-- Unique Project 9: Your App -->
-            <div class="owl-item" style="width: 366.667px; margin-right: 20px;">
-              <div class="card">
-                <a href="https://your-apps-project.netlify.app" target="_blank" rel="noreferrer" title="Your App">
-                  <div class="box">
-                    <img src="img/Yourappimg.png" alt="Your App">
-                  </div>
-                </a>
-                <a href="https://your-apps-project.netlify.app" target="_blank" rel="noreferrer" title="Your App">
-                  <p>Your App</p>
-                </a>
-                <p>HTML, CSS, JavaScript, Bootstrap</p>
-              </div>
-            </div>
-
-            <!-- Unique Project 10: Weather Forecast -->
-            <div class="owl-item" style="width: 366.667px; margin-right: 20px;">
-              <div class="card">
-                <a href="https://weather-forecast-temp.netlify.app/" target="_blank" rel="noreferrer"
-                  title="Weather Forecast">
-                  <div class="box">
-                    <img src="img/weather.png" alt="Weather Forecast">
-                  </div>
-                </a>
-                <a href="https://weather-forecast-temp.netlify.app/" target="_blank" rel="noreferrer"
-                  title="Weather Forecast">
-                  <p>Weather Forecast</p>
-                </a>
-                <p>HTML | CSS | Weather API | JS</p>
-              </div>
-            </div>
-
-            <!-- Unique Project 11: Classic_Calculator -->
-            <div class="owl-item" style="width: 366.667px; margin-right: 20px;">
-              <div class="card">
-                <a href="https://karthik-kathari.github.io/Classic_Calculator/" target="_blank" rel="noreferrer"
-                  title="Classic_Calculator">
-                  <div class="box">
-                    <img src="./img/calculator.png" alt="Classic_Calculator">
-                  </div>
-                </a>
-                <a href="https://karthik-kathari.github.io/Classic_Calculator/" target="_blank" rel="noreferrer"
-                  title="Classic_Calculator">
-                  <p>Classic_Calculator</p>
-                </a>
-                <p>HTML | CSS | JS </p>
-              </div>
-            </div>
-
-            <!-- Unique Project 12: Parallax_Website -->
-            <div class="owl-item" style="width: 366.667px; margin-right: 20px;">
-              <div class="card">
-                <a href="https://karthik-kathari.github.io/Parallax_Website/" target="_blank" rel="noreferrer"
-                  title="Parallax_Website_proejct">
-                  <div class="box">
-                    <img src="./img/Parallax_Website.png" alt="Parallax_Website">
-                  </div>
-                </a>
-                <a href="https://karthik-kathari.github.io/Parallax_Website/" target="_blank" rel="noreferrer"
-                  title="Sidcupfamilygolf_animation_proejct">
-                  <p>Parallax_Website</p>
-                </a>
-                <p>HTML | CSS </p>
-              </div>
-            </div>
-
-            <!-- Unique Project 13: NewsFetcherApp  -->
-            <div class="owl-item" style="width: 366.667px; margin-right: 20px;">
-              <div class="card">
-                <a href="https://news-fetcher-app.netlify.app/" target="_blank" rel="noreferrer"
-                  title="news-fetcher-app">
-                  <div class="box">
-                    <img src="./img/NewsfetcherImg.png" alt="news-fetcher-app">
-                  </div>
-                </a>
-                <a href="https://news-fetcher-app.netlify.app/" target="_blank" rel="noreferrer"
-                  title="news-fetcher-app">
-                  <p>NewsFetcherApp</p>
-                </a>
-                <p>React.js | HTML | CSS </p>
-              </div>
-            </div>
-
-            <!-- Unique Project 14: TeleBot  -->
-            <div class="owl-item" style="width: 366.667px; margin-right: 20px;">
-              <div class="card">
-                <a href="https://t.me/tele611bot/" target="_blank" rel="noreferrer" title="Telegram-Bot">
-                  <div class="box">
-                    <img src="./img/TelebotSS.png" alt="Telegram-Bot">
-                  </div>
-                </a>
-                <a href="https://t.me/tele611bot" target="_blank" rel="noreferrer" title="Telegram-Bot">
-                  <p>Telegram-Bot</p>
-                </a>
-                <p>Node.js | Express | Telegram Bot API | Axios</p>
-              </div>
-            </div>
-
-            <!-- Unique Project 14: MovieManiac  -->
-            <div class="owl-item" style="width: 366.667px; margin-right: 20px;">
-              <div class="card">
-                <a href="https://moviemaniacoffical.netlify.app/" target="_blank" rel="noreferrer" title="MovieManiac">
-                  <div class="box">
-                    <img src="./img/MovieFly.png" alt="MovieManiac">
-                  </div>
-                </a>
-                <a href="https://moviemaniacoffical.netlify.app/" target="_blank" rel="noreferrer" title="MovieManiac">
-                  <p>MovieManiac</p>
-                </a>
-                <p>React.js | JavaScript | HTML | CSS | API </p>
-              </div>
-            </div>
-
-          </div>
-        </div>
-        <div class="owl-nav disabled">
-          <button type="button" role="presentation" class="owl-prev">
-            <span aria-label="Previous">‹</span>
-          </button>
-          <button type="button" role="presentation" class="owl-next">
-            <span aria-label="Next">›</span>
-          </button>
-        </div>
-        <div class="owl-dots">
-          <button role="button" class="owl-dot active"><span></span></button>
-          <button role="button" class="owl-dot active"><span></span></button>
-          <button role="button" class="owl-dot active"><span></span></button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-
-  <!-----------------------Experience Section-------------------->
-  <section class="certificate-section" id="Experience">
-    <h2>Experience Section</h2>
-    <div class="certificate-container">
-      <div class="certificate-entry">
-        <h3>Government Affairs Intern</h3>
-        <p>Humane World for Animals India Foundation | On-Site | April 2025 – Oct 2025</p>
-        <p>I support the development of educational materials for government officers and assist in data analysis to
-          improve program outcomes. I also coordinate logistics for capacity-building workshops and manage the
-          foundation’s online presence, including multimedia content and social media management to enhance engagement.
+    <div class="relative z-10 w-full max-w-[1400px] mx-auto px-4 md:px-8 pt-32 md:pt-36">
+      <div class="max-w-2xl ml-0">
+        <p class="text-xl md:text-2xl lg:text-3xl text-crimson font-medium mb-4 fadein showme tracking-wide flex items-center gap-3">
+          <span class="inline-block animate-pulse text-2xl md:text-3xl">👋</span> Hello, I'm
         </p>
+        <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold leading-[1.1] text-white mb-4 fadein showme">
+          Karthik <span class="text-crimson">Kathari</span>
+        </h1>
+        <div class="h-12 md:h-16 mb-8 fadein showme">
+          <p class="text-xl md:text-3xl text-white/90 font-light">
+            And I'm a <span class="typing text-white font-semibold"></span><span class="typed-cursor" aria-hidden="true">|</span>
+          </p>
+        </div>
+        <div class="flex flex-wrap gap-4 fadein showme">
+          <a href="https://www.linkedin.com/in/karthik-kathari-434495154/" target="_blank" class="btn-crimson text-lg px-8 py-4 hover:scale-105 transition-transform">
+            <i class="fab fa-linkedin mr-2"></i>LinkedIn
+          </a>
+          <a href="https://drive.google.com/file/d/1p-Az01YWxqQRohK5JQ2aMSqXa6I2iPu9/view?usp=sharing" target="_blank"
+             download="KARTHIK_KATHARI_Resume_2025" class="btn-outline text-lg px-8 py-4 hover:scale-105 transition-transform">
+            <i class="fas fa-download mr-2"></i>Download CV
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Scroll indicator -->
+    <div class="scroll-indicator" onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">
+      <span class="scroll-text">SCROLL</span>
+      <div class="scroll-line"></div>
+      <i class="fas fa-chevron-down scroll-chevron"></i>
+    </div>
+  </section>
+
+  <!-- ═══ ABOUT ═════════════════════════════════════════════ -->
+  <section id="about" class="py-28 bg-[#111117] font-poppins relative overflow-hidden">
+    <!-- Decorative background element -->
+    <div class="absolute top-0 right-0 w-96 h-96 bg-crimson/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+    
+    <div class="max-w-[1300px] mx-auto px-6 relative z-10">
+      <h2 class="section-title fadein" data-subtitle="who i am">About Me</h2>
+      
+      <div class="mt-20 flex flex-col lg:flex-row items-center gap-16">
+        <!-- Photo with enhanced styling -->
+        <div class="flex-shrink-0 fadein relative">
+          <div class="absolute -inset-3 bg-gradient-to-br from-crimson/30 to-purple-600/20 rounded-3xl blur-xl opacity-70"></div>
+          <img src="img/mypic.jpeg" alt="Karthik Kathari" id="myphoto"
+               class="about-img relative w-72 md:w-80 h-auto object-cover rounded-2xl border-2 border-white/10 shadow-2xl">
+          <!-- Floating badge -->
+          <div class="absolute -bottom-4 -right-4 bg-gradient-to-br from-crimson to-pink-600 text-white px-4 py-2 rounded-xl text-sm font-semibold shadow-lg">
+            <i class="fas fa-code mr-2"></i>Developer
+          </div>
+        </div>
+        
+        <!-- Text content -->
+        <div class="fadein flex-1 space-y-6">
+          <div class="inline-block px-4 py-1 bg-crimson/10 border border-crimson/30 rounded-full text-crimson text-sm font-medium mb-2">
+            <i class="fas fa-user-circle mr-2"></i>Full Stack Developer
+          </div>
+          
+          <h3 class="text-3xl md:text-4xl font-bold text-white font-ubuntu leading-tight">
+            I'm Karthik Kathari,<br>
+            <span class="text-crimson typing2"></span><span class="typed-cursor typed-cursor--blink" aria-hidden="true">|</span>
+          </h3>
+          
+          <div class="space-y-4 text-white/70 leading-relaxed text-lg">
+            <p>Frontend-focused <span class="text-white font-semibold">Full Stack Developer</span> passionate about building responsive, secure, and user-centric web applications. I specialize in crafting clean, intuitive, and high-performing interfaces.</p>
+            <p>I work across modern <span class="text-white font-semibold">frontend and full-stack development</span>, applying best practices to deliver scalable digital experiences. I leverage <span class="text-white font-semibold">AI-driven tools</span> to enhance productivity and code quality.</p>
+            <p>Beyond development, I bring collaboration and leadership experience as an External Field Instructor and Student Ambassador.</p>
+          </div>
+          
+          <div class="flex flex-wrap gap-4 pt-4">
+            <a href="https://www.linkedin.com/in/karthik-kathari-434495154/" target="_blank" class="btn-crimson">
+              <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+            <a href="https://github.com/Karthik-Kathari/" target="_blank" class="btn-outline">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ SKILLS ════════════════════════════════════════════ -->
+  <section id="skills" class="py-28 bg-[#0d0d12] font-poppins relative overflow-hidden">
+    <!-- Animated background elements -->
+    <div class="absolute top-20 left-10 w-96 h-96 bg-crimson/10 rounded-full blur-[150px] animate-pulse"></div>
+    <div class="absolute bottom-20 right-10 w-80 h-80 bg-purple-600/10 rounded-full blur-[120px] animate-pulse" style="animation-delay: 1s;"></div>
+    <div class="absolute top-1/2 left-1/2 w-64 h-64 bg-blue-500/5 rounded-full blur-[100px] -translate-x-1/2 -translate-y-1/2"></div>
+    
+    <div class="max-w-[1300px] mx-auto px-6 relative z-10">
+      <h2 class="section-title fadein" data-subtitle="what i know">Skills & Expertise</h2>
+
+      <div class="mt-20 grid md:grid-cols-2 gap-10 items-stretch">
+
+        <!-- Technical Skills Card -->
+        <div class="fadein group relative h-full">
+          <div class="absolute -inset-0.5 bg-gradient-to-r from-crimson to-purple-600 rounded-2xl opacity-30 group-hover:opacity-60 blur transition duration-500"></div>
+          <div class="relative bg-gradient-to-br from-[#0d0d12] to-[#111117] border border-white/10 rounded-2xl p-8 backdrop-blur-sm overflow-hidden h-full flex flex-col justify-between">
+            <!-- Floating particles -->
+            <div class="absolute top-4 right-4 w-2 h-2 bg-crimson/50 rounded-full animate-ping"></div>
+            <div class="absolute bottom-8 left-8 w-1.5 h-1.5 bg-purple-500/50 rounded-full animate-ping" style="animation-delay: 0.5s;"></div>
+            
+            <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-crimson/20 to-purple-600/20 flex items-center justify-center border border-crimson/20">
+                <i class="fas fa-code text-crimson"></i>
+              </div>
+              Technical Skills
+            </h3>
+            
+            <!-- Languages & Frameworks -->
+            <div class="mb-6">
+              <p class="text-xs text-crimson/80 uppercase tracking-wider mb-3 font-semibold">Languages & Frameworks</p>
+              <div class="flex flex-wrap gap-3">
+                <div class="skill-pill group/pill cursor-pointer hover:scale-110 transition-all duration-300 hover:shadow-lg hover:shadow-orange-500/20"><img width="20" height="20" src="https://img.icons8.com/color/48/html-5--v1.png" class="group-hover/pill:animate-bounce"/> HTML5</div>
+                <div class="skill-pill group/pill cursor-pointer hover:scale-110 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/20"><img width="20" height="20" src="https://img.icons8.com/color/48/css3.png" class="group-hover/pill:animate-bounce"/> CSS3</div>
+                <div class="skill-pill group/pill cursor-pointer hover:scale-110 transition-all duration-300 hover:shadow-lg hover:shadow-yellow-500/20"><img width="20" height="20" src="https://img.icons8.com/color/48/javascript--v1.png" class="group-hover/pill:animate-bounce"/> JavaScript</div>
+                <div class="skill-pill group/pill cursor-pointer hover:scale-110 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20"><img width="20" height="20" src="https://img.icons8.com/color-glass/48/bootstrap.png" class="group-hover/pill:animate-bounce"/> Bootstrap</div>
+                <div class="skill-pill group/pill cursor-pointer hover:scale-110 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/20"><img width="20" height="20" src="https://img.icons8.com/color/48/tailwind_css.png" class="group-hover/pill:animate-bounce"/> Tailwind</div>
+                <div class="skill-pill group/pill cursor-pointer hover:scale-110 transition-all duration-300 hover:shadow-lg hover:shadow-blue-400/20"><img width="20" height="20" src="https://img.icons8.com/?size=100&id=asWSSTBrDlTW&format=png&color=000000" class="group-hover/pill:animate-bounce"/> React</div>
+                <div class="skill-pill group/pill cursor-pointer hover:scale-110 transition-all duration-300 hover:shadow-lg hover:shadow-purple-600/20"><img width="20" height="20" src="https://img.icons8.com/?size=100&id=b6vIINYN0kfW&format=png&color=000000" class="group-hover/pill:animate-bounce"/> Redux</div>
+                <div class="skill-pill group/pill cursor-pointer hover:scale-110 transition-all duration-300 hover:shadow-lg hover:shadow-green-500/20"><img width="20" height="20" src="https://img.icons8.com/?size=100&id=hsPbhkOH4FMe&format=png&color=000000" class="group-hover/pill:animate-bounce"/> Node.js</div>
+                <div class="skill-pill group/pill cursor-pointer hover:scale-110 transition-all duration-300 hover:shadow-lg hover:shadow-gray-500/20"><img width="20" height="20" src="https://img.icons8.com/?size=100&id=kg46nzoJrmTR&format=png&color=000000" class="group-hover/pill:animate-bounce"/> Express</div>
+                <div class="skill-pill group/pill cursor-pointer hover:scale-110 transition-all duration-300 hover:shadow-lg hover:shadow-green-600/20"><img width="20" height="20" src="https://img.icons8.com/?size=100&id=cREyrHivHRHF&format=png&color=000000" class="group-hover/pill:animate-bounce"/> MongoDB</div>
+              </div>
+            </div>
+            
+            <!-- Tools -->
+            <div class="relative">
+              <p class="text-xs text-crimson/80 uppercase tracking-wider mb-3 font-semibold">Tools & Platforms</p>
+              <div class="flex flex-wrap gap-3">
+                <div class="skill-pill group/pill cursor-pointer hover:scale-110 transition-all duration-300 hover:shadow-lg hover:shadow-orange-600/20"><img width="20" height="20" src="https://img.icons8.com/color/48/git.png" class="group-hover/pill:animate-bounce"/> Git</div>
+                <div class="skill-pill group/pill cursor-pointer hover:scale-110 transition-all duration-300 hover:shadow-lg hover:shadow-white/20"><img width="20" height="20" src="https://img.icons8.com/ios-filled/50/github.png" class="group-hover/pill:animate-bounce"/> GitHub</div>
+                <div class="skill-pill group/pill cursor-pointer hover:scale-110 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/20"><img width="20" height="20" src="https://img.icons8.com/fluency/48/visual-studio-code-2019.png" class="group-hover/pill:animate-bounce"/> VS Code</div>
+                <div class="skill-pill group/pill cursor-pointer hover:scale-110 transition-all duration-300 hover:shadow-lg hover:shadow-orange-500/20"><img width="20" height="20" src="https://res.cloudinary.com/postman/image/upload/t_team_logo/v1629869194/team/2893aede23f01bfcbd2319326bc96a6ed0524eba759745ed6d73405a3a8b67a8" class="group-hover/pill:animate-bounce"/> Postman</div>
+                <div class="skill-pill group/pill cursor-pointer hover:scale-110 transition-all duration-300 hover:shadow-lg hover:shadow-purple-400/20"><img width="20" height="20" src="https://img.icons8.com/?size=100&id=zfHRZ6i1Wg0U&format=png&color=000000" class="group-hover/pill:animate-bounce"/> Figma</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Other Skills Column -->
+        <div class="space-y-6 h-full flex flex-col">
+          <!-- Operating Systems -->
+          <div class="fadein group relative">
+            <div class="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl opacity-20 group-hover:opacity-40 blur transition duration-500"></div>
+            <div class="relative bg-gradient-to-br from-[#0d0d12] to-[#111117] border border-white/10 rounded-2xl p-6 backdrop-blur-sm">
+              <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-3">
+                <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-blue-500/20 to-cyan-500/20 flex items-center justify-center border border-blue-500/20">
+                  <i class="fas fa-desktop text-blue-400"></i>
+                </div>
+                Operating Systems
+              </h3>
+              <div class="flex flex-wrap gap-3">
+                <div class="skill-pill group/pill cursor-pointer hover:scale-110 transition-all duration-300"><img width="20" height="20" src="https://img.icons8.com/color/48/windows-10.png" class="group-hover/pill:animate-spin"/> Windows</div>
+                <div class="skill-pill group/pill cursor-pointer hover:scale-110 transition-all duration-300"><img width="20" height="20" src="https://img.icons8.com/color/48/debian.png" class="group-hover/pill:animate-spin"/> Linux</div>
+                <div class="skill-pill group/pill cursor-pointer hover:scale-110 transition-all duration-300"><img width="20" height="20" src="https://img.icons8.com/color/48/mac-os--v1.png" class="group-hover/pill:animate-spin"/> macOS</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Soft Skills -->
+          <div class="fadein group relative flex-1">
+            <div class="absolute -inset-0.5 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-2xl opacity-20 group-hover:opacity-40 blur transition duration-500 h-full"></div>
+            <div class="relative bg-gradient-to-br from-[#0d0d12] to-[#111117] border border-white/10 rounded-2xl p-6 backdrop-blur-sm h-full">
+              <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-3">
+                <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-yellow-500/20 to-orange-500/20 flex items-center justify-center border border-yellow-500/20 animate-pulse">
+                  <i class="fas fa-lightbulb text-yellow-400"></i>
+                </div>
+                Soft Skills
+              </h3>
+              <div class="flex flex-wrap gap-2">
+                <span class="soft-chip2 hover:bg-crimson/30 hover:scale-105 hover:shadow-lg hover:shadow-crimson/20 transition-all duration-300 cursor-pointer">Problem Solving</span>
+                <span class="soft-chip2 hover:bg-crimson/30 hover:scale-105 hover:shadow-lg hover:shadow-crimson/20 transition-all duration-300 cursor-pointer">Critical Thinking</span>
+                <span class="soft-chip2 hover:bg-crimson/30 hover:scale-105 hover:shadow-lg hover:shadow-crimson/20 transition-all duration-300 cursor-pointer">Team Collaboration</span>
+                <span class="soft-chip2 hover:bg-crimson/30 hover:scale-105 hover:shadow-lg hover:shadow-crimson/20 transition-all duration-300 cursor-pointer">Attention to Detail</span>
+                <span class="soft-chip2 hover:bg-crimson/30 hover:scale-105 hover:shadow-lg hover:shadow-crimson/20 transition-all duration-300 cursor-pointer">Creativity</span>
+                <span class="soft-chip2 hover:bg-crimson/30 hover:scale-105 hover:shadow-lg hover:shadow-crimson/20 transition-all duration-300 cursor-pointer">Time Management</span>
+                <span class="soft-chip2 hover:bg-crimson/30 hover:scale-105 hover:shadow-lg hover:shadow-crimson/20 transition-all duration-300 cursor-pointer">Adaptability</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ PROJECTS ════════════════════════════════════════════ -->
+  <section id="projects" class="py-28 bg-[#0d0d12] font-poppins relative overflow-hidden">
+    <!-- Background Effects -->
+    <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+      <div class="absolute top-20 right-20 w-96 h-96 bg-crimson/10 rounded-full blur-[150px] animate-pulse"></div>
+      <div class="absolute bottom-20 left-20 w-80 h-80 bg-purple-600/10 rounded-full blur-[120px] animate-pulse" style="animation-delay: 1s;"></div>
+    </div>
+
+    <div class="max-w-[1400px] mx-auto px-6 relative z-10">
+      <div class="text-center mb-16">
+        <h2 class="section-title fadein inline-block" data-subtitle="featured work">My Projects</h2>
+        <p class="text-white/50 mt-4 max-w-2xl mx-auto">A collection of my best work, showcasing creativity and technical expertise.</p>
       </div>
 
+      <!-- Projects Grid -->
+      <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-8 projects-grid">
 
-      <div class="certificate-entry">
-        <h3>Junior Frontend Developer Intern</h3>
-        <p>Purezza technologies | Remote | Dec 2024 – April 2025</p>
-        <p>I oversee frontend development, crafting responsive websites using HTML5, CSS3, JavaScript,
-          Bootstrap, and jQuery. I collaborate with cross-functional teams to implement new features, address
-          technical challenges, and optimize site performance across all devices. This role allows me to
-          refine my expertise while ensuring the delivery of efficient, high-quality web solutions.</p>
-      </div>
-      <div class="certificate-entry">
-        <h3>Cyber Security Intern</h3>
-        <p>GarudaX | Remote | Aug 2024 – Feb 2025</p>
-        <p>Monitor network traffic and implement Intrusion Detection Systems (IDS) to identify potential
-          threats. Conduct vulnerability assessments and penetration testing while collaborating on
-          remediation efforts. Assist in incident response planning and post-incident analysis.</p>
-      </div>
-      <div class="certificate-entry">
-        <h3>Cyber Security Analyst Intern</h3>
-        <p>Forage | Remote | Aug 2024 – Sept 2024</p>
-        <p>Assisted clients with legal issues related to cyber breaches during the job simulation. Advised the
-          managing partner of an online travel company on responding to an ICO Dawn Raid.</p>
-      </div>
-      <div class="certificate-entry">
-        <h3>External Field Instructor</h3>
-        <p>Phoenix Screening Service | On-Site | Jan 2024 - Apr 2024</p>
-        <p>Offered feedback to enhance participant skills and developed a security instructor program.</p>
-      </div>
-      <div class="certificate-entry">
-        <h3>Forensic Intern</h3>
-        <p>Phoenix Screening Service | On-Site | Jul 2023 – Oct 2023</p>
-        <p>Assisted in crime scene investigations, evidence collection, and collaborated with forensic experts.
-        </p>
+        <!-- Project 1: Secrets App -->
+        <div class="project-card-new group fadein" data-category="fullstack">
+          <div class="project-inner">
+            <div class="project-front">
+              <div class="project-icon w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center text-3xl mb-4">🔐</div>
+              <h3 class="project-title">Secrets App</h3>
+              <p class="project-desc">Anonymous secret sharing platform with authentication</p>
+              <div class="project-stats">
+                <span class="stat"><i class="fas fa-users"></i> 500+ Users</span>
+                <span class="stat"><i class="fas fa-lock"></i> Secure</span>
+              </div>
+            </div>
+            <div class="project-back">
+              <img src="img/Register_login_secrets.png" alt="Secrets App">
+              <div class="project-overlay">
+                <div class="tech-badges">
+                  <span class="tech-badge">EJS</span>
+                  <span class="tech-badge">Node.js</span>
+                  <span class="tech-badge">Express</span>
+                  <span class="tech-badge">MongoDB</span>
+                </div>
+                <a href="https://register-login-secret-web.onrender.com/" target="_blank" class="view-btn">
+                  <span>View Project</span>
+                  <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2: Pokémon Explorer -->
+        <div class="project-card-new group fadein" data-category="frontend">
+          <div class="project-inner">
+            <div class="project-front">
+              <div class="project-icon w-16 h-16 rounded-2xl bg-gradient-to-br from-yellow-400 to-orange-500 flex items-center justify-center text-3xl mb-4">⚡</div>
+              <h3 class="project-title">Pokémon Explorer</h3>
+              <p class="project-desc">Interactive Pokédex with API integration</p>
+              <div class="project-stats">
+                <span class="stat"><i class="fas fa-bolt"></i> API</span>
+                <span class="stat"><i class="fas fa-mobile-alt"></i> Responsive</span>
+              </div>
+            </div>
+            <div class="project-back">
+              <img src="./img/pokemon.png" alt="Pokémon Explorer">
+              <div class="project-overlay">
+                <div class="tech-badges">
+                  <span class="tech-badge">React</span>
+                  <span class="tech-badge">API</span>
+                  <span class="tech-badge">CSS3</span>
+                </div>
+                <a href="https://karthik-kathari.github.io/pokemon-explorer/" target="_blank" class="view-btn">
+                  <span>View Project</span>
+                  <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3: Keeper Notes -->
+        <div class="project-card-new group fadein" data-category="frontend">
+          <div class="project-inner">
+            <div class="project-front">
+              <div class="project-icon w-16 h-16 rounded-2xl bg-gradient-to-br from-green-400 to-teal-500 flex items-center justify-center text-3xl mb-4">📝</div>
+              <h3 class="project-title">Keeper Notes</h3>
+              <p class="project-desc">Google Keep clone for note management</p>
+              <div class="project-stats">
+                <span class="stat"><i class="fas fa-sticky-note"></i> Notes</span>
+                <span class="stat"><i class="fas fa-sync"></i> Real-time</span>
+              </div>
+            </div>
+            <div class="project-back">
+              <img src="img/keepernotes.png" alt="Keeper Notes">
+              <div class="project-overlay">
+                <div class="tech-badges">
+                  <span class="tech-badge">React</span>
+                  <span class="tech-badge">JavaScript</span>
+                  <span class="tech-badge">CSS3</span>
+                </div>
+                <a href="https://keeper-app-project-react.netlify.app/" target="_blank" class="view-btn">
+                  <span>View Project</span>
+                  <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4: MediaQuery Kit -->
+        <div class="project-card-new group fadein" data-category="tool">
+          <div class="project-inner">
+            <div class="project-front">
+              <div class="project-icon w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center text-3xl mb-4">🛠️</div>
+              <h3 class="project-title">MediaQuery Kit</h3>
+              <p class="project-desc">CLI tool for responsive design</p>
+              <div class="project-stats">
+                <span class="stat"><i class="fas fa-terminal"></i> CLI</span>
+                <span class="stat"><i class="fas fa-code"></i> Tool</span>
+              </div>
+            </div>
+            <div class="project-back">
+              <img src="img/kmk-mediaquery-kit.png" alt="MediaQuery Kit">
+              <div class="project-overlay">
+                <div class="tech-badges">
+                  <span class="tech-badge">JavaScript</span>
+                  <span class="tech-badge">Node.js</span>
+                  <span class="tech-badge">CLI</span>
+                </div>
+                <a href="https://karthik-kathari.github.io/kmk-mediaquery-kit-landing-site/" target="_blank" class="view-btn">
+                  <span>View Project</span>
+                  <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+          
+        <!-- Project 5: Sporty E-Commerce -->
+        <div class="project-card-new group fadein" data-category="frontend">
+          <div class="project-inner">
+            <div class="project-front">
+              <div class="project-icon w-16 h-16 rounded-2xl bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center text-3xl mb-4">🛒</div>
+              <h3 class="project-title">Sporty E-Commerce</h3>
+              <p class="project-desc">Sports products store with animations</p>
+              <div class="project-stats">
+                <span class="stat"><i class="fas fa-shopping-cart"></i> Store</span>
+                <span class="stat"><i class="fas fa-magic"></i> GSAP</span>
+              </div>
+            </div>
+            <div class="project-back">
+              <img src="./img/Ecommerce_with_Login.png" alt="Sporty E-Commerce">
+              <div class="project-overlay">
+                <div class="tech-badges">
+                  <span class="tech-badge">HTML5</span>
+                  <span class="tech-badge">CSS3</span>
+                  <span class="tech-badge">GSAP</span>
+                </div>
+                <a href="https://karthik-kathari.github.io/Ecommerce_Website/index.html" target="_blank" class="view-btn">
+                  <span>View Project</span>
+                  <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 6: SidCup Golf -->
+        <div class="project-card-new group fadein" data-category="frontend">
+          <div class="project-inner">
+            <div class="project-front">
+              <div class="project-icon w-16 h-16 rounded-2xl bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center text-3xl mb-4">⛳</div>
+              <h3 class="project-title">SidCup Golf</h3>
+              <p class="project-desc">Animated golf course website</p>
+              <div class="project-stats">
+                <span class="stat"><i class="fas fa-golf-ball"></i> Sports</span>
+                <span class="stat"><i class="fas fa-film"></i> Animations</span>
+              </div>
+            </div>
+            <div class="project-back">
+              <img src="./img/sidcupfamilygolf.png" alt="SidCup Golf">
+              <div class="project-overlay">
+                <div class="tech-badges">
+                  <span class="tech-badge">HTML5</span>
+                  <span class="tech-badge">CSS3</span>
+                  <span class="tech-badge">GSAP</span>
+                </div>
+                <a href="https://karthik-kathari.github.io/SidcupGolfCenter/" target="_blank" class="view-btn">
+                  <span>View Project</span>
+                  <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 7: Amazon Clone -->
+        <div class="project-card-new group fadein" data-category="frontend">
+          <div class="project-inner">
+            <div class="project-front">
+              <div class="project-icon w-16 h-16 rounded-2xl bg-gradient-to-br from-yellow-500 to-amber-600 flex items-center justify-center text-3xl mb-4">📦</div>
+              <h3 class="project-title">Amazon Clone</h3>
+              <p class="project-desc">E-commerce UI replica</p>
+              <div class="project-stats">
+                <span class="stat"><i class="fas fa-box"></i> E-com</span>
+                <span class="stat"><i class="fas fa-palette"></i> UI/UX</span>
+              </div>
+            </div>
+            <div class="project-back">
+              <img src="./img/amazon_clone_project.png" alt="Amazon Clone">
+              <div class="project-overlay">
+                <div class="tech-badges">
+                  <span class="tech-badge">HTML5</span>
+                  <span class="tech-badge">CSS3</span>
+                  <span class="tech-badge">JavaScript</span>
+                </div>
+                <a href="https://karthik-kathari.github.io/Amazon_Clone_Project/" target="_blank" class="view-btn">
+                  <span>View Project</span>
+                  <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 8: Omnifood -->
+        <div class="project-card-new group fadein" data-category="frontend">
+          <div class="project-inner">
+            <div class="project-front">
+              <div class="project-icon w-16 h-16 rounded-2xl bg-gradient-to-br from-lime-500 to-green-600 flex items-center justify-center text-3xl mb-4">🥗</div>
+              <h3 class="project-title">Omnifood</h3>
+              <p class="project-desc">Healthy food delivery website</p>
+              <div class="project-stats">
+                <span class="stat"><i class="fas fa-leaf"></i> Food</span>
+                <span class="stat"><i class="fas fa-truck"></i> Delivery</span>
+              </div>
+            </div>
+            <div class="project-back">
+              <img src="./img/omnifood.png" alt="Omnifood">
+              <div class="project-overlay">
+                <div class="tech-badges">
+                  <span class="tech-badge">HTML5</span>
+                  <span class="tech-badge">CSS3</span>
+                  <span class="tech-badge">JS</span>
+                </div>
+                <a href="https://healthy-food-website-project.netlify.app/" target="_blank" class="view-btn">
+                  <span>View Project</span>
+                  <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 9: Your App -->
+        <div class="project-card-new group fadein" data-category="frontend">
+          <div class="project-inner">
+            <div class="project-front">
+              <div class="project-icon w-16 h-16 rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-3xl mb-4">📱</div>
+              <h3 class="project-title">Your App</h3>
+              <p class="project-desc">Multi-feature application platform</p>
+              <div class="project-stats">
+                <span class="stat"><i class="fas fa-th-large"></i> Multi-app</span>
+                <span class="stat"><i class="fas fa-rocket"></i> Modern</span>
+              </div>
+            </div>
+            <div class="project-back">
+              <img src="img/Yourappimg.png" alt="Your App">
+              <div class="project-overlay">
+                <div class="tech-badges">
+                  <span class="tech-badge">React</span>
+                  <span class="tech-badge">Bootstrap</span>
+                  <span class="tech-badge">JS</span>
+                </div>
+                <a href="https://your-apps-project.netlify.app" target="_blank" class="view-btn">
+                  <span>View Project</span>
+                  <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 10: Weather Forecast -->
+        <div class="project-card-new group fadein" data-category="frontend">
+          <div class="project-inner">
+            <div class="project-front">
+              <div class="project-icon w-16 h-16 rounded-2xl bg-gradient-to-br from-sky-400 to-blue-600 flex items-center justify-center text-3xl mb-4">🌤️</div>
+              <h3 class="project-title">Weather Forecast</h3>
+              <p class="project-desc">Real-time weather data app</p>
+              <div class="project-stats">
+                <span class="stat"><i class="fas fa-cloud"></i> API</span>
+                <span class="stat"><i class="fas fa-map-marker-alt"></i> Location</span>
+              </div>
+            </div>
+            <div class="project-back">
+              <img src="img/weather.png" alt="Weather Forecast">
+              <div class="project-overlay">
+                <div class="tech-badges">
+                  <span class="tech-badge">HTML5</span>
+                  <span class="tech-badge">CSS3</span>
+                  <span class="tech-badge">API</span>
+                </div>
+                <a href="https://weather-forecast-temp.netlify.app/" target="_blank" class="view-btn">
+                  <span>View Project</span>
+                  <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 11: Calculator -->
+        <div class="project-card-new group fadein" data-category="frontend">
+          <div class="project-inner">
+            <div class="project-front">
+              <div class="project-icon w-16 h-16 rounded-2xl bg-gradient-to-br from-gray-500 to-slate-600 flex items-center justify-center text-3xl mb-4">🧮</div>
+              <h3 class="project-title">Classic Calculator</h3>
+              <p class="project-desc">Functional calculator app</p>
+              <div class="project-stats">
+                <span class="stat"><i class="fas fa-calculator"></i> Math</span>
+                <span class="stat"><i class="fas fa-calculator"></i> Logic</span>
+              </div>
+            </div>
+            <div class="project-back">
+              <img src="./img/calculator.png" alt="Calculator">
+              <div class="project-overlay">
+                <div class="tech-badges">
+                  <span class="tech-badge">HTML5</span>
+                  <span class="tech-badge">CSS3</span>
+                  <span class="tech-badge">JS</span>
+                </div>
+                <a href="https://karthik-kathari.github.io/Classic_Calculator/" target="_blank" class="view-btn">
+                  <span>View Project</span>
+                  <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 12: Parallax Website -->
+        <div class="project-card-new group fadein" data-category="frontend">
+          <div class="project-inner">
+            <div class="project-front">
+              <div class="project-icon w-16 h-16 rounded-2xl bg-gradient-to-br from-rose-500 to-pink-600 flex items-center justify-center text-3xl mb-4">🏔️</div>
+              <h3 class="project-title">Parallax Site</h3>
+              <p class="project-desc">Scrolling animation effects</p>
+              <div class="project-stats">
+                <span class="stat"><i class="fas fa-mountain"></i> Scroll</span>
+                <span class="stat"><i class="fas fa-eye"></i> Visual</span>
+              </div>
+            </div>
+            <div class="project-back">
+              <img src="./img/Parallax_Website.png" alt="Parallax">
+              <div class="project-overlay">
+                <div class="tech-badges">
+                  <span class="tech-badge">HTML5</span>
+                  <span class="tech-badge">CSS3</span>
+                  <span class="tech-badge">JS</span>
+                </div>
+                <a href="https://karthik-kathari.github.io/Parallax_Website/" target="_blank" class="view-btn">
+                  <span>View Project</span>
+                  <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 13: News App -->
+        <div class="project-card-new group fadein" data-category="frontend">
+          <div class="project-inner">
+            <div class="project-front">
+              <div class="project-icon w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center text-3xl mb-4">📰</div>
+              <h3 class="project-title">News Fetcher</h3>
+              <p class="project-desc">Live news aggregation app</p>
+              <div class="project-stats">
+                <span class="stat"><i class="fas fa-newspaper"></i> News</span>
+                <span class="stat"><i class="fas fa-rss"></i> Live</span>
+              </div>
+            </div>
+            <div class="project-back">
+              <img src="./img/NewsfetcherImg.png" alt="News App">
+              <div class="project-overlay">
+                <div class="tech-badges">
+                  <span class="tech-badge">React</span>
+                  <span class="tech-badge">CSS3</span>
+                  <span class="tech-badge">API</span>
+                </div>
+                <a href="https://news-fetcher-app.netlify.app/" target="_blank" class="view-btn">
+                  <span>View Project</span>
+                  <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 14: Telegram Bot -->
+        <div class="project-card-new group fadein" data-category="backend">
+          <div class="project-inner">
+            <div class="project-front">
+              <div class="project-icon w-16 h-16 rounded-2xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-3xl mb-4">🤖</div>
+              <h3 class="project-title">Telegram Bot</h3>
+              <p class="project-desc">Automated messaging bot</p>
+              <div class="project-stats">
+                <span class="stat"><i class="fas fa-robot"></i> Bot</span>
+                <span class="stat"><i class="fas fa-cogs"></i> Auto</span>
+              </div>
+            </div>
+            <div class="project-back">
+              <img src="./img/TelebotSS.png" alt="Telegram Bot">
+              <div class="project-overlay">
+                <div class="tech-badges">
+                  <span class="tech-badge">Node.js</span>
+                  <span class="tech-badge">Telegram API</span>
+                </div>
+                <a href="https://t.me/tele611bot/" target="_blank" class="view-btn">
+                  <span>View Project</span>
+                  <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 15: Movie Maniac -->
+        <div class="project-card-new group fadein" data-category="frontend">
+          <div class="project-inner">
+            <div class="project-front">
+              <div class="project-icon w-16 h-16 rounded-2xl bg-gradient-to-br from-red-600 to-rose-700 flex items-center justify-center text-3xl mb-4">🎬</div>
+              <h3 class="project-title">Movie Maniac</h3>
+              <p class="project-desc">Movie discovery platform</p>
+              <div class="project-stats">
+                <span class="stat"><i class="fas fa-film"></i> Movies</span>
+                <span class="stat"><i class="fas fa-search"></i> Discover</span>
+              </div>
+            </div>
+            <div class="project-back">
+              <img src="./img/MovieFly.png" alt="Movie Maniac">
+              <div class="project-overlay">
+                <div class="tech-badges">
+                  <span class="tech-badge">React</span>
+                  <span class="tech-badge">API</span>
+                  <span class="tech-badge">CSS3</span>
+                </div>
+                <a href="https://moviemaniacoffical.netlify.app/" target="_blank" class="view-btn">
+                  <span>View Project</span>
+                  <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
 
 
-  <!-- certificates Section -->
-  <section class="certificates-wrapper" id="Certificate">
-    <h2>Certificate Section</h2>
-    <div class="scrollable-area" id="scrollable-area-certificates">
-      <!-- Web Development Relevant Certificates -->
-      <div class="certification-card">
-        <h3>Pwskills - Full Stack Development</h3>
-        <a href="https://drive.google.com/file/d/19lQ5AFr-KOCljcgZpMvYRr2ICD4Me8hm/view?usp=drive_link" target="_blank"
-          class="view-certificate-link">View Certificate</a>
+  <!-- ═══ EXPERIENCE ═══════════════════════════════════════════ -->
+  <section id="Experience" class="py-28 bg-[#111117] font-poppins relative overflow-hidden">
+    <div class="max-w-[1000px] mx-auto px-6 relative z-10">
+      <h2 class="section-title fadein" data-subtitle="my career journey">Experience</h2>
+      
+      <div class="mt-20 relative">
+        <!-- Central Timeline Line with moving dot -->
+        <div class="hidden lg:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-crimson via-crimson/50 to-transparent transform -translate-x-1/2">
+          <div class="timeline-moving-dot"></div>
+        </div>
+        
+        <div class="space-y-16">
+          <!-- 1. Full Stack Developer - RIGHT side -->
+          <div class="timeline-item fadein relative lg:grid lg:grid-cols-[1fr_auto_1fr] lg:gap-12 items-center">
+            <div class="hidden lg:flex items-center justify-end pr-4">
+              <div class="exp-date-badge">Jan 2025 – <span class="text-green-400">Present</span></div>
+            </div>
+            <div class="hidden lg:flex w-16 h-16 rounded-full bg-gradient-to-br from-crimson to-rose-700 items-center justify-center text-white text-2xl shadow-xl shadow-crimson/40 z-10 shrink-0 ring-4 ring-crimson/20">
+              <i class="fas fa-laptop-code"></i>
+            </div>
+            <div class="w-full">
+              <div class="exp-card-premium">
+                <div class="exp-card-glow"></div>
+                <div class="exp-card-shimmer"></div>
+                <div class="flex items-center gap-3 mb-3">
+                  <div class="lg:hidden w-10 h-10 rounded-xl bg-gradient-to-br from-crimson to-rose-700 flex items-center justify-center text-white text-sm shadow-lg shadow-crimson/30 shrink-0"><i class="fas fa-laptop-code"></i></div>
+                  <div class="flex-1 min-w-0">
+                    <h3 class="text-lg font-bold text-white tracking-tight leading-tight">Full Stack Developer</h3>
+                    <div class="flex items-center gap-2 mt-1 flex-wrap">
+                      <span class="exp-company-name">Gray Materials</span>
+                      <span class="exp-badge-onsite">On-Site</span>
+                    </div>
+                  </div>
+                  <div class="lg:hidden exp-date-badge-sm shrink-0">Jan 2025</div>
+                </div>
+                <div class="exp-divider"></div>
+                <p class="text-white/60 text-sm leading-6 mt-3">Lead development of end-to-end web solutions, ensuring seamless integration between user-facing interfaces and backend systems.</p>
+                <div class="mt-3 flex flex-wrap gap-2">
+                  <span class="exp-tag">React</span>
+                  <span class="exp-tag">Node.js</span>
+                  <span class="exp-tag">MongoDB</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. Government Affairs - LEFT side -->
+          <div class="timeline-item fadein relative lg:grid lg:grid-cols-[1fr_auto_1fr] lg:gap-12 items-center">
+            <div class="w-full lg:text-right order-3 lg:order-1">
+              <div class="exp-card-premium">
+                <div class="exp-card-glow"></div>
+                <div class="exp-card-shimmer"></div>
+                <div class="flex items-center gap-3 mb-3 lg:flex-row-reverse">
+                  <div class="lg:hidden w-10 h-10 rounded-xl bg-gradient-to-br from-crimson to-rose-700 flex items-center justify-center text-white text-sm shadow-lg shadow-crimson/30 shrink-0"><i class="fas fa-landmark"></i></div>
+                  <div class="flex-1 min-w-0 lg:text-right">
+                    <h3 class="text-lg font-bold text-white tracking-tight leading-tight">Government Affairs Intern</h3>
+                    <div class="flex items-center gap-2 mt-1 flex-wrap lg:justify-end">
+                      <span class="exp-company-name">Humane World for Animals</span>
+                      <span class="exp-badge-onsite">On-Site</span>
+                    </div>
+                  </div>
+                  <div class="lg:hidden exp-date-badge-sm shrink-0">Apr 2025</div>
+                </div>
+                <div class="exp-divider"></div>
+                <p class="text-white/60 text-sm leading-6 mt-3 lg:text-right">Support development of educational materials for government officers, assist in data analysis, and coordinate capacity-building workshops.</p>
+              </div>
+            </div>
+            <div class="hidden lg:flex w-16 h-16 rounded-full bg-gradient-to-br from-crimson to-rose-700 items-center justify-center text-white text-2xl shadow-xl shadow-crimson/40 z-10 shrink-0 order-2 ring-4 ring-crimson/20">
+              <i class="fas fa-landmark"></i>
+            </div>
+            <div class="hidden lg:flex items-center justify-start pl-4 order-3">
+              <div class="exp-date-badge">Apr 2025 – Oct 2025</div>
+            </div>
+          </div>
+
+          <!-- 3. Frontend Developer - RIGHT side -->
+          <div class="timeline-item fadein relative lg:grid lg:grid-cols-[1fr_auto_1fr] lg:gap-12 items-center">
+            <div class="hidden lg:flex items-center justify-end pr-4">
+              <div class="exp-date-badge">Dec 2024 – Apr 2025</div>
+            </div>
+            <div class="hidden lg:flex w-16 h-16 rounded-full bg-gradient-to-br from-crimson to-rose-700 items-center justify-center text-white text-2xl shadow-xl shadow-crimson/40 z-10 shrink-0 ring-4 ring-crimson/20">
+              <i class="fas fa-code"></i>
+            </div>
+            <div class="w-full">
+              <div class="exp-card-premium">
+                <div class="exp-card-glow"></div>
+                <div class="exp-card-shimmer"></div>
+                <div class="flex items-center gap-3 mb-3">
+                  <div class="lg:hidden w-10 h-10 rounded-xl bg-gradient-to-br from-crimson to-rose-700 flex items-center justify-center text-white text-sm shadow-lg shadow-crimson/30 shrink-0"><i class="fas fa-code"></i></div>
+                  <div class="flex-1 min-w-0">
+                    <h3 class="text-lg font-bold text-white tracking-tight leading-tight">Junior Frontend Developer</h3>
+                    <div class="flex items-center gap-2 mt-1 flex-wrap">
+                      <span class="exp-company-name">Purezza Technologies</span>
+                      <span class="exp-badge-remote">Remote</span>
+                    </div>
+                  </div>
+                  <div class="lg:hidden exp-date-badge-sm shrink-0">Dec 2024</div>
+                </div>
+                <div class="exp-divider"></div>
+                <p class="text-white/60 text-sm leading-6 mt-3">Crafted responsive websites using HTML5, CSS3, JavaScript, Bootstrap, and jQuery. Collaborated with cross-functional teams to implement features.</p>
+                <div class="mt-3 flex flex-wrap gap-2">
+                  <span class="exp-tag">HTML/CSS</span>
+                  <span class="exp-tag">JavaScript</span>
+                  <span class="exp-tag">Bootstrap</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. Cyber Security - LEFT side -->
+          <div class="timeline-item fadein relative lg:grid lg:grid-cols-[1fr_auto_1fr] lg:gap-12 items-center">
+            <div class="w-full lg:text-right order-3 lg:order-1">
+              <div class="exp-card-premium">
+                <div class="exp-card-glow"></div>
+                <div class="exp-card-shimmer"></div>
+                <div class="flex items-center gap-3 mb-3 lg:flex-row-reverse">
+                  <div class="lg:hidden w-10 h-10 rounded-xl bg-gradient-to-br from-crimson to-rose-700 flex items-center justify-center text-white text-sm shadow-lg shadow-crimson/30 shrink-0"><i class="fas fa-shield-alt"></i></div>
+                  <div class="flex-1 min-w-0 lg:text-right">
+                    <h3 class="text-lg font-bold text-white tracking-tight leading-tight">Cyber Security Intern</h3>
+                    <div class="flex items-center gap-2 mt-1 flex-wrap lg:justify-end">
+                      <span class="exp-company-name">GarudaX</span>
+                      <span class="exp-badge-remote">Remote</span>
+                    </div>
+                  </div>
+                  <div class="lg:hidden exp-date-badge-sm shrink-0">Aug 2024</div>
+                </div>
+                <div class="exp-divider"></div>
+                <p class="text-white/60 text-sm leading-6 mt-3 lg:text-right">Monitored network traffic, implemented IDS, conducted vulnerability assessments and penetration testing, and assisted in incident response planning.</p>
+              </div>
+            </div>
+            <div class="hidden lg:flex w-16 h-16 rounded-full bg-gradient-to-br from-crimson to-rose-700 items-center justify-center text-white text-2xl shadow-xl shadow-crimson/40 z-10 shrink-0 order-2 ring-4 ring-crimson/20">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <div class="hidden lg:flex items-center justify-start pl-4 order-3">
+              <div class="exp-date-badge">Aug 2024 – Feb 2025</div>
+            </div>
+          </div>
+
+          <!-- 5. Security Analyst - RIGHT side -->
+          <div class="timeline-item fadein relative lg:grid lg:grid-cols-[1fr_auto_1fr] lg:gap-12 items-center">
+            <div class="hidden lg:flex items-center justify-end pr-4">
+              <div class="exp-date-badge">Aug 2024 – Sept 2024</div>
+            </div>
+            <div class="hidden lg:flex w-16 h-16 rounded-full bg-gradient-to-br from-crimson to-rose-700 items-center justify-center text-white text-2xl shadow-xl shadow-crimson/40 z-10 shrink-0 ring-4 ring-crimson/20">
+              <i class="fas fa-search"></i>
+            </div>
+            <div class="w-full">
+              <div class="exp-card-premium">
+                <div class="exp-card-glow"></div>
+                <div class="exp-card-shimmer"></div>
+                <div class="flex items-center gap-3 mb-3">
+                  <div class="lg:hidden w-10 h-10 rounded-xl bg-gradient-to-br from-crimson to-rose-700 flex items-center justify-center text-white text-sm shadow-lg shadow-crimson/30 shrink-0"><i class="fas fa-search"></i></div>
+                  <div class="flex-1 min-w-0">
+                    <h3 class="text-lg font-bold text-white tracking-tight leading-tight">Cyber Security Analyst</h3>
+                    <div class="flex items-center gap-2 mt-1 flex-wrap">
+                      <span class="exp-company-name">Forage</span>
+                      <span class="exp-badge-remote">Remote</span>
+                    </div>
+                  </div>
+                  <div class="lg:hidden exp-date-badge-sm shrink-0">Aug 2024</div>
+                </div>
+                <div class="exp-divider"></div>
+                <p class="text-white/60 text-sm leading-6 mt-3">Assisted clients with legal issues related to cyber breaches. Advised the managing partner on responding to an ICO Dawn Raid.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 6. Field Instructor - LEFT side -->
+          <div class="timeline-item fadein relative lg:grid lg:grid-cols-[1fr_auto_1fr] lg:gap-12 items-center">
+            <div class="w-full lg:text-right order-3 lg:order-1">
+              <div class="exp-card-premium">
+                <div class="exp-card-glow"></div>
+                <div class="exp-card-shimmer"></div>
+                <div class="flex items-center gap-3 mb-3 lg:flex-row-reverse">
+                  <div class="lg:hidden w-10 h-10 rounded-xl bg-gradient-to-br from-crimson to-rose-700 flex items-center justify-center text-white text-sm shadow-lg shadow-crimson/30 shrink-0"><i class="fas fa-chalkboard-teacher"></i></div>
+                  <div class="flex-1 min-w-0 lg:text-right">
+                    <h3 class="text-lg font-bold text-white tracking-tight leading-tight">External Field Instructor</h3>
+                    <div class="flex items-center gap-2 mt-1 flex-wrap lg:justify-end">
+                      <span class="exp-company-name">Phoenix Screening Service</span>
+                      <span class="exp-badge-onsite">On-Site</span>
+                    </div>
+                  </div>
+                  <div class="lg:hidden exp-date-badge-sm shrink-0">Jan 2024</div>
+                </div>
+                <div class="exp-divider"></div>
+                <p class="text-white/60 text-sm leading-6 mt-3 lg:text-right">Offered feedback to enhance participant skills and developed a security instructor program for field teams.</p>
+              </div>
+            </div>
+            <div class="hidden lg:flex w-16 h-16 rounded-full bg-gradient-to-br from-crimson to-rose-700 items-center justify-center text-white text-2xl shadow-xl shadow-crimson/40 z-10 shrink-0 order-2 ring-4 ring-crimson/20">
+              <i class="fas fa-chalkboard-teacher"></i>
+            </div>
+            <div class="hidden lg:flex items-center justify-start pl-4 order-3">
+              <div class="exp-date-badge">Jan 2024 – Apr 2024</div>
+            </div>
+          </div>
+
+          <!-- 7. Forensic Intern - RIGHT side -->
+          <div class="timeline-item fadein relative lg:grid lg:grid-cols-[1fr_auto_1fr] lg:gap-12 items-center">
+            <div class="hidden lg:flex items-center justify-end pr-4">
+              <div class="exp-date-badge">Jul 2023 – Oct 2023</div>
+            </div>
+            <div class="hidden lg:flex w-16 h-16 rounded-full bg-gradient-to-br from-crimson to-rose-700 items-center justify-center text-white text-2xl shadow-xl shadow-crimson/40 z-10 shrink-0 ring-4 ring-crimson/20">
+              <i class="fas fa-microscope"></i>
+            </div>
+            <div class="w-full">
+              <div class="exp-card-premium">
+                <div class="exp-card-glow"></div>
+                <div class="exp-card-shimmer"></div>
+                <div class="flex items-center gap-3 mb-3">
+                  <div class="lg:hidden w-10 h-10 rounded-xl bg-gradient-to-br from-crimson to-rose-700 flex items-center justify-center text-white text-sm shadow-lg shadow-crimson/30 shrink-0"><i class="fas fa-microscope"></i></div>
+                  <div class="flex-1 min-w-0">
+                    <h3 class="text-lg font-bold text-white tracking-tight leading-tight">Forensic Intern</h3>
+                    <div class="flex items-center gap-2 mt-1 flex-wrap">
+                      <span class="exp-company-name">Phoenix Screening Service</span>
+                      <span class="exp-badge-onsite">On-Site</span>
+                    </div>
+                  </div>
+                  <div class="lg:hidden exp-date-badge-sm shrink-0">Jul 2023</div>
+                </div>
+                <div class="exp-divider"></div>
+                <p class="text-white/60 text-sm leading-6 mt-3">Assisted in crime scene investigations, evidence collection, and collaborated with forensic experts on case analysis and documentation.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
       </div>
-      <div class="certification-card">
-        <h3>HTML, CSS & JavaScript for Web Developers</h3>
-        <a href="https://drive.google.com/file/d/1FF-PXx51aqILkZ_Deg1NjGUd0Bl3WAnT/view?usp=sharing" target="_blank"
-          class="view-certificate-link">View Certificate</a>
-      </div>
-      <div class="certification-card">
-        <h3>Microsoft Learn Student Ambassadors Web Development Workshop</h3>
-        <a href="https://drive.google.com/file/d/1QE02F6AmbAuc5WqsaaLU5GM69JidD2b6/view?usp=sharing" target="_blank"
-          class="view-certificate-link">View
-          Certificate</a>
-      </div>
-      <div class="certification-card">
-        <h3>Web Development Fundamentals - IBM </h3>
-        <a href="https://drive.google.com/file/d/14Vgc_mBY43GQZdXwmVYS5odOYXHII8CR/view?usp=drive_link" target="_blank"
-          class="view-certificate-link">View
-          Certificate</a>
-      </div>
-      <div class="certification-card">
-        <h3>Tutedude - MERN Full Stack</h3>
-        <a href="https://drive.google.com/file/d/10LjfVtm4ecWqPj1QT7DSA_UIfwEMDoSq/view?usp=drive_link" target="_blank"
-          class="view-certificate-link">View
-          Certificate</a>
-      </div>
-      <div class="certification-card">
-        <h3>HTML5 Application Development Fundamentals</h3>
-        <a href="https://drive.google.com/file/d/15nPDTWMro-9WWbitOcCy5UiWx9_m5Mf6/view?usp=drive_link" target="_blank"
-          class="view-certificate-link">View
-          Certificate</a>
-      </div>
-      <div class="certification-card">
-        <h3>GenAI 101 with Pieces</h3>
-        <a href="https://drive.google.com/file/d/1uhB10dWY-vklHVKu99UInQr-SPXcuWTH/view?usp=drive_link" target="_blank"
-          class="view-certificate-link">View
-          Certificate</a>
+    </div>
+  </section>
+
+
+
+  <!-- ═══ CERTIFICATES ══════════════════════════════════════════ -->
+  <section id="Certificate" class="py-28 bg-[#0d0d12] font-poppins relative overflow-hidden">
+    <!-- Background Elements -->
+    <div class="absolute top-0 left-0 w-full h-full">
+      <div class="absolute top-40 right-20 w-96 h-96 bg-crimson/5 rounded-full blur-[120px]"></div>
+      <div class="absolute bottom-20 left-20 w-72 h-72 bg-blue-500/5 rounded-full blur-[100px]"></div>
+    </div>
+
+    <div class="max-w-[1300px] mx-auto px-6 relative z-10">
+      <!-- Section Header -->
+      <div class="text-center mb-16">
+        <h2 class="section-title fadein inline-block" data-subtitle="verified credentials">Certificates</h2>
+        <p class="text-white/50 mt-4 max-w-2xl mx-auto">Professional certifications from industry leaders demonstrating expertise across multiple domains.</p>
       </div>
 
-      <!-- Cybersecurity Related Certificates -->
-      <div class="certification-card">
-        <h3>Certified in Cybersecurity - ISC2</h3>
-        <a href="https://drive.google.com/file/d/1fmS0uImvQE08QJHEsU75tuFlwauTCKtQ/view?usp=drive_link" target="_blank"
-          class="view-certificate-link">View
-          Certificate</a>
-      </div>
-      <div class="certification-card">
-        <h3>Google Cyber Security Professional Certificate</h3>
-        <a href="https://drive.google.com/file/d/1ugXG2snT-CMWBB6br-vP923ix5IhzF5Y/view?usp=drive_link" target="_blank"
-          class="view-certificate-link">View
-          Certificate</a>
-      </div>
-      <div class="certification-card">
-        <h3>Cybersecurity Fundamentals - IBM </h3>
-        <a href="https://drive.google.com/file/d/1y3CUF6RQJ2n1zkeEDXoFRu7j-dDRdXUZ/view?usp=drive_link" target="_blank"
-          class="view-certificate-link">View
-          Certificate</a>
-      </div>
-      <div class="certification-card">
-        <h3>Foundations of Cybersecurity - Google</h3>
-        <a href="https://drive.google.com/file/d/11SHJ5njG9jY-iaxV1KBl0Tl0R00hnnpC/view?usp=drive_linkCertificate/Google Cyber security Foundation A.jpg"
-          target="_blank" class="view-certificate-link">View
-          Certificate</a>
-      </div>
-      <!-- <div class="certification-card">
-                <h3>Certified in Cybersecurity</h3>
-                <a href="https://drive.google.com/file/d/1YKq_Td-6-ELHzs48tXve6v7iYVT87N7Z/view?usp=sharing"
-                    target="_blank" class="view-certificate-link">View Certificate</a>
-            </div> -->
-      <div class="certification-card">
-        <h3>TCS ION Career Edge - Young Professionals</h3>
-        <a href="https://drive.google.com/file/d/1BGnVtuBMPSXdKWOWDDhb8JrNefKo3y0j/view?usp=drive_link" target="_blank"
-          class="view-certificate-link">View Certificate</a>
-      </div>
-      <div class="certification-card">
-        <h3>CISCO Networking Fundamentals</h3>
-        <a href="https://drive.google.com/file/d/1wvoVg6gVQgwim2TOMdpvL1iz7xXIiU_f/view?usp=drive_link" target="_blank"
-          class="view-certificate-link">View
-          Certificate</a>
-      </div>
-      <div class="certification-card">
-        <h3>CISCO - Cyber Security</h3>
-        <a href="https://drive.google.com/file/d/1-IIrZVR2DyS_16-FMuRtJ9vh0N_r055l/view?usp=drive_link" target="_blank"
-          class="view-certificate-link">View
-          Certificate</a>
+      <!-- Certificate Stats -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+        <div class="bg-white/[0.03] border border-white/10 rounded-2xl p-6 text-center hover:border-crimson/30 transition-all duration-300 group">
+          <div class="text-3xl mb-2 group-hover:scale-110 transition-transform">🌐</div>
+          <div class="text-2xl font-bold text-white">7</div>
+          <div class="text-white/50 text-sm">Web Development</div>
+        </div>
+        <div class="bg-white/[0.03] border border-white/10 rounded-2xl p-6 text-center hover:border-crimson/30 transition-all duration-300 group">
+          <div class="text-3xl mb-2 group-hover:scale-110 transition-transform">🔒</div>
+          <div class="text-2xl font-bold text-white">9</div>
+          <div class="text-white/50 text-sm">Cybersecurity</div>
+        </div>
+        <div class="bg-white/[0.03] border border-white/10 rounded-2xl p-6 text-center hover:border-crimson/30 transition-all duration-300 group">
+          <div class="text-3xl mb-2 group-hover:scale-110 transition-transform">🏢</div>
+          <div class="text-2xl font-bold text-white">10+</div>
+          <div class="text-white/50 text-sm">Organizations</div>
+        </div>
+        <div class="bg-white/[0.03] border border-white/10 rounded-2xl p-6 text-center hover:border-crimson/30 transition-all duration-300 group">
+          <div class="text-3xl mb-2 group-hover:scale-110 transition-transform">📜</div>
+          <div class="text-2xl font-bold text-white">19</div>
+          <div class="text-white/50 text-sm">Total Certs</div>
+        </div>
       </div>
 
-      <div class="certification-card">
-        <h3>Digital Forensics Essentials - EC-Council </h3>
-        <a href="https://drive.google.com/file/d/1WuPZzXZhVMcVz_Zajb0QgwKnn6tOC9vt/view?usp=drive_link" target="_blank"
-          class="view-certificate-link">View Certificate</a>
+      <!-- Web Development Certificates -->
+      <div class="mb-12">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-blue-500/20 to-cyan-500/20 flex items-center justify-center text-xl border border-blue-500/20">💻</div>
+          <h3 class="text-lg font-bold text-white">Web Development</h3>
+          <div class="flex-1 h-px bg-gradient-to-r from-blue-500/30 to-transparent"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <!-- Card 1 -->
+          <div class="cert-card group fadein">
+            <div class="h-full bg-gradient-to-br from-white/[0.05] to-white/[0.02] border border-white/10 rounded-2xl p-5 hover:border-blue-500/30 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/10">
+              <div class="flex items-start gap-3 mb-3">
+                <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-blue-500/20 to-blue-600/20 flex items-center justify-center text-lg shrink-0">🎓</div>
+                <div class="flex-1 min-w-0">
+                  <h4 class="text-white font-semibold text-sm leading-tight mb-1">Full Stack Development</h4>
+                  <p class="text-blue-400 text-xs">Pwskills</p>
+                </div>
+              </div>
+              <a href="https://drive.google.com/file/d/19lQ5AFr-KOCljcgZpMvYRr2ICD4Me8hm/view?usp=drive_link" target="_blank" class="inline-flex items-center gap-2 text-xs text-crimson hover:text-white transition-colors">
+                <span>View Certificate</span>
+                <i class="fas fa-external-link-alt text-[10px]"></i>
+              </a>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div class="cert-card group fadein">
+            <div class="h-full bg-gradient-to-br from-white/[0.05] to-white/[0.02] border border-white/10 rounded-2xl p-5 hover:border-orange-500/30 transition-all duration-300 hover:shadow-lg hover:shadow-orange-500/10">
+              <div class="flex items-start gap-3 mb-3">
+                <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-orange-500/20 to-orange-600/20 flex items-center justify-center text-lg shrink-0">🌐</div>
+                <div class="flex-1 min-w-0">
+                  <h4 class="text-white font-semibold text-sm leading-tight mb-1">HTML, CSS & JavaScript</h4>
+                  <p class="text-orange-400 text-xs">Johns Hopkins University</p>
+                </div>
+              </div>
+              <a href="https://drive.google.com/file/d/1FF-PXx51aqILkZ_Deg1NjGUd0Bl3WAnT/view?usp=sharing" target="_blank" class="inline-flex items-center gap-2 text-xs text-crimson hover:text-white transition-colors">
+                <span>View Certificate</span>
+                <i class="fas fa-external-link-alt text-[10px]"></i>
+              </a>
+            </div>
+          </div>
+          <!-- Card 3 -->
+          <div class="cert-card group fadein">
+            <div class="h-full bg-gradient-to-br from-white/[0.05] to-white/[0.02] border border-white/10 rounded-2xl p-5 hover:border-blue-600/30 transition-all duration-300 hover:shadow-lg hover:shadow-blue-600/10">
+              <div class="flex items-start gap-3 mb-3">
+                <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-blue-600/20 to-indigo-600/20 flex items-center justify-center text-lg shrink-0">🔷</div>
+                <div class="flex-1 min-w-0">
+                  <h4 class="text-white font-semibold text-sm leading-tight mb-1">Web Development Workshop</h4>
+                  <p class="text-blue-400 text-xs">Microsoft Learn</p>
+                </div>
+              </div>
+              <a href="https://drive.google.com/file/d/1QE02F6AmbAuc5WqsaaLU5GM69JidD2b6/view?usp=sharing" target="_blank" class="inline-flex items-center gap-2 text-xs text-crimson hover:text-white transition-colors">
+                <span>View Certificate</span>
+                <i class="fas fa-external-link-alt text-[10px]"></i>
+              </a>
+            </div>
+          </div>
+          <!-- Card 4 -->
+          <div class="cert-card group fadein">
+            <div class="h-full bg-gradient-to-br from-white/[0.05] to-white/[0.02] border border-white/10 rounded-2xl p-5 hover:border-purple-500/30 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/10">
+              <div class="flex items-start gap-3 mb-3">
+                <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-purple-500/20 to-indigo-600/20 flex items-center justify-center text-lg shrink-0">🚀</div>
+                <div class="flex-1 min-w-0">
+                  <h4 class="text-white font-semibold text-sm leading-tight mb-1">Web Development Fundamentals</h4>
+                  <p class="text-purple-400 text-xs">IBM</p>
+                </div>
+              </div>
+              <a href="https://drive.google.com/file/d/14Vgc_mBY43GQZdXwmVYS5odOYXHII8CR/view?usp=drive_link" target="_blank" class="inline-flex items-center gap-2 text-xs text-crimson hover:text-white transition-colors">
+                <span>View Certificate</span>
+                <i class="fas fa-external-link-alt text-[10px]"></i>
+              </a>
+            </div>
+          </div>
+          <!-- Card 5 -->
+          <div class="cert-card group fadein">
+            <div class="h-full bg-gradient-to-br from-white/[0.05] to-white/[0.02] border border-white/10 rounded-2xl p-5 hover:border-green-500/30 transition-all duration-300 hover:shadow-lg hover:shadow-green-500/10">
+              <div class="flex items-start gap-3 mb-3">
+                <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-green-500/20 to-emerald-600/20 flex items-center justify-center text-lg shrink-0">🌿</div>
+                <div class="flex-1 min-w-0">
+                  <h4 class="text-white font-semibold text-sm leading-tight mb-1">MERN Full Stack</h4>
+                  <p class="text-green-400 text-xs">Tutedude</p>
+                </div>
+              </div>
+              <a href="https://drive.google.com/file/d/10LjfVtm4ecWqPj1QT7DSA_UIfwEMDoSq/view?usp=drive_link" target="_blank" class="inline-flex items-center gap-2 text-xs text-crimson hover:text-white transition-colors">
+                <span>View Certificate</span>
+                <i class="fas fa-external-link-alt text-[10px]"></i>
+              </a>
+            </div>
+          </div>
+          <!-- Card 6 -->
+          <div class="cert-card group fadein">
+            <div class="h-full bg-gradient-to-br from-white/[0.05] to-white/[0.02] border border-white/10 rounded-2xl p-5 hover:border-red-500/30 transition-all duration-300 hover:shadow-lg hover:shadow-red-500/10">
+              <div class="flex items-start gap-3 mb-3">
+                <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-red-500/20 to-red-600/20 flex items-center justify-center text-lg shrink-0">📱</div>
+                <div class="flex-1 min-w-0">
+                  <h4 class="text-white font-semibold text-sm leading-tight mb-1">HTML5 Application Development</h4>
+                  <p class="text-red-400 text-xs">Microsoft</p>
+                </div>
+              </div>
+              <a href="https://drive.google.com/file/d/15nPDTWMro-9WWbitOcCy5UiWx9_m5Mf6/view?usp=drive_link" target="_blank" class="inline-flex items-center gap-2 text-xs text-crimson hover:text-white transition-colors">
+                <span>View Certificate</span>
+                <i class="fas fa-external-link-alt text-[10px]"></i>
+              </a>
+            </div>
+          </div>
+          <!-- Card 7 -->
+          <div class="cert-card group fadein">
+            <div class="h-full bg-gradient-to-br from-white/[0.05] to-white/[0.02] border border-white/10 rounded-2xl p-5 hover:border-indigo-500/30 transition-all duration-300 hover:shadow-lg hover:shadow-indigo-500/10">
+              <div class="flex items-start gap-3 mb-3">
+                <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-indigo-500/20 to-purple-600/20 flex items-center justify-center text-lg shrink-0">🧩</div>
+                <div class="flex-1 min-w-0">
+                  <h4 class="text-white font-semibold text-sm leading-tight mb-1">GenAI 101 with Pieces</h4>
+                  <p class="text-indigo-400 text-xs">Pieces</p>
+                </div>
+              </div>
+              <a href="https://drive.google.com/file/d/1uhB10dWY-vklHVKu99UInQr-SPXcuWTH/view?usp=drive_link" target="_blank" class="inline-flex items-center gap-2 text-xs text-crimson hover:text-white transition-colors">
+                <span>View Certificate</span>
+                <i class="fas fa-external-link-alt text-[10px]"></i>
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="certification-card">
-        <h3>Cyber Security Global Virtual Internship - Forage</h3>
-        <a href="https://drive.google.com/file/d/1Fl74hj4B4mZOTGlbB_wLG0bzqp52YMlx/view?usp=drive_link" target="_blank"
-          class="view-certificate-link">View Certificate</a>
+
+      <!-- Cybersecurity Certificates -->
+      <div class="mb-12">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-red-500/20 to-orange-500/20 flex items-center justify-center text-xl border border-red-500/20">🛡️</div>
+          <h3 class="text-lg font-bold text-white">Cybersecurity</h3>
+          <div class="flex-1 h-px bg-gradient-to-r from-red-500/30 to-transparent"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <!-- Card 1 -->
+          <div class="cert-card group fadein">
+            <div class="h-full bg-gradient-to-br from-red-500/10 via-white/[0.05] to-white/[0.02] border border-red-500/20 rounded-2xl p-5 hover:border-red-500/40 transition-all duration-300 hover:shadow-lg hover:shadow-red-500/10">
+              <div class="flex items-start gap-3 mb-3">
+                <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-red-500 to-orange-600 flex items-center justify-center text-lg shrink-0 shadow-lg shadow-red-500/30">🔐</div>
+                <div class="flex-1 min-w-0">
+                  <h4 class="text-white font-semibold text-sm leading-tight mb-1">Certified in Cybersecurity</h4>
+                  <p class="text-red-400 text-xs font-bold">ISC2</p>
+                </div>
+              </div>
+              <a href="https://drive.google.com/file/d/1fmS0uImvQE08QJHEsU75tuFlwauTCKtQ/view?usp=drive_link" target="_blank" class="inline-flex items-center gap-2 text-xs text-crimson hover:text-white transition-colors">
+                <span>View Certificate</span>
+                <i class="fas fa-external-link-alt text-[10px]"></i>
+              </a>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div class="cert-card group fadein">
+            <div class="h-full bg-gradient-to-br from-blue-500/10 via-white/[0.05] to-white/[0.02] border border-blue-500/20 rounded-2xl p-5 hover:border-blue-500/40 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/10">
+              <div class="flex items-start gap-3 mb-3">
+                <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-blue-500 to-cyan-600 flex items-center justify-center text-lg shrink-0 shadow-lg shadow-blue-500/30">🔵</div>
+                <div class="flex-1 min-w-0">
+                  <h4 class="text-white font-semibold text-sm leading-tight mb-1">Google Cyber Security Professional</h4>
+                  <p class="text-blue-400 text-xs font-bold">Google</p>
+                </div>
+              </div>
+              <a href="https://drive.google.com/file/d/1ugXG2snT-CMWBB6br-vP923ix5IhzF5Y/view?usp=drive_link" target="_blank" class="inline-flex items-center gap-2 text-xs text-crimson hover:text-white transition-colors">
+                <span>View Certificate</span>
+                <i class="fas fa-external-link-alt text-[10px]"></i>
+              </a>
+            </div>
+          </div>
+          <!-- Card 3 -->
+          <div class="cert-card group fadein">
+            <div class="h-full bg-gradient-to-br from-purple-500/10 via-white/[0.05] to-white/[0.02] border border-purple-500/20 rounded-2xl p-5 hover:border-purple-500/40 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/10">
+              <div class="flex items-start gap-3 mb-3">
+                <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center text-lg shrink-0 shadow-lg shadow-purple-500/30">🟣</div>
+                <div class="flex-1 min-w-0">
+                  <h4 class="text-white font-semibold text-sm leading-tight mb-1">Cybersecurity Fundamentals</h4>
+                  <p class="text-purple-400 text-xs font-bold">IBM</p>
+                </div>
+              </div>
+              <a href="https://drive.google.com/file/d/1y3CUF6RQJ2n1zkeEDXoFRu7j-dDRdXUZ/view?usp=drive_link" target="_blank" class="inline-flex items-center gap-2 text-xs text-crimson hover:text-white transition-colors">
+                <span>View Certificate</span>
+                <i class="fas fa-external-link-alt text-[10px]"></i>
+              </a>
+            </div>
+          </div>
+          <!-- Card 4 -->
+          <div class="cert-card group fadein">
+            <div class="h-full bg-gradient-to-br from-green-500/10 via-white/[0.05] to-white/[0.02] border border-green-500/20 rounded-2xl p-5 hover:border-green-500/40 transition-all duration-300 hover:shadow-lg hover:shadow-green-500/10">
+              <div class="flex items-start gap-3 mb-3">
+                <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center text-lg shrink-0 shadow-lg shadow-green-500/30">🔒</div>
+                <div class="flex-1 min-w-0">
+                  <h4 class="text-white font-semibold text-sm leading-tight mb-1">Foundations of Cybersecurity</h4>
+                  <p class="text-green-400 text-xs font-bold">Google</p>
+                </div>
+              </div>
+              <a href="https://drive.google.com/file/d/11SHJ5njG9jY-iaxV1KBl0Tl0R00hnnpC/view?usp=drive_link" target="_blank" class="inline-flex items-center gap-2 text-xs text-crimson hover:text-white transition-colors">
+                <span>View Certificate</span>
+                <i class="fas fa-external-link-alt text-[10px]"></i>
+              </a>
+            </div>
+          </div>
+          <!-- Card 5 -->
+          <div class="cert-card group fadein">
+            <div class="h-full bg-gradient-to-br from-blue-600/10 via-white/[0.05] to-white/[0.02] border border-blue-600/20 rounded-2xl p-5 hover:border-blue-600/40 transition-all duration-300 hover:shadow-lg hover:shadow-blue-600/10">
+              <div class="flex items-start gap-3 mb-3">
+                <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-blue-600 to-blue-800 flex items-center justify-center text-lg shrink-0 shadow-lg shadow-blue-600/30">💼</div>
+                <div class="flex-1 min-w-0">
+                  <h4 class="text-white font-semibold text-sm leading-tight mb-1">TCS ION Career Edge</h4>
+                  <p class="text-blue-400 text-xs font-bold">TCS</p>
+                </div>
+              </div>
+              <a href="https://drive.google.com/file/d/1BGnVtuBMPSXdKWOWDDhb8JrNefKo3y0j/view?usp=drive_link" target="_blank" class="inline-flex items-center gap-2 text-xs text-crimson hover:text-white transition-colors">
+                <span>View Certificate</span>
+                <i class="fas fa-external-link-alt text-[10px]"></i>
+              </a>
+            </div>
+          </div>
+          <!-- Card 6 -->
+          <div class="cert-card group fadein">
+            <div class="h-full bg-gradient-to-br from-cyan-500/10 via-white/[0.05] to-white/[0.02] border border-cyan-500/20 rounded-2xl p-5 hover:border-cyan-500/40 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/10">
+              <div class="flex items-start gap-3 mb-3">
+                <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-lg shrink-0 shadow-lg shadow-cyan-500/30">🌐</div>
+                <div class="flex-1 min-w-0">
+                  <h4 class="text-white font-semibold text-sm leading-tight mb-1">Networking Fundamentals</h4>
+                  <p class="text-cyan-400 text-xs font-bold">CISCO</p>
+                </div>
+              </div>
+              <a href="https://drive.google.com/file/d/1wvoVg6gVQgwim2TOMdpvL1iz7xXIiU_f/view?usp=drive_link" target="_blank" class="inline-flex items-center gap-2 text-xs text-crimson hover:text-white transition-colors">
+                <span>View Certificate</span>
+                <i class="fas fa-external-link-alt text-[10px]"></i>
+              </a>
+            </div>
+          </div>
+          <!-- Card 7 -->
+          <div class="cert-card group fadein">
+            <div class="h-full bg-gradient-to-br from-teal-500/10 via-white/[0.05] to-white/[0.02] border border-teal-500/20 rounded-2xl p-5 hover:border-teal-500/40 transition-all duration-300 hover:shadow-lg hover:shadow-teal-500/10">
+              <div class="flex items-start gap-3 mb-3">
+                <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-teal-500 to-cyan-600 flex items-center justify-center text-lg shrink-0 shadow-lg shadow-teal-500/30">🛡️</div>
+                <div class="flex-1 min-w-0">
+                  <h4 class="text-white font-semibold text-sm leading-tight mb-1">Cyber Security</h4>
+                  <p class="text-teal-400 text-xs font-bold">CISCO</p>
+                </div>
+              </div>
+              <a href="https://drive.google.com/file/d/1-IIrZVR2DyS_16-FMuRtJ9vh0N_r055l/view?usp=drive_link" target="_blank" class="inline-flex items-center gap-2 text-xs text-crimson hover:text-white transition-colors">
+                <span>View Certificate</span>
+                <i class="fas fa-external-link-alt text-[10px]"></i>
+              </a>
+            </div>
+          </div>
+          <!-- Card 8 -->
+          <div class="cert-card group fadein">
+            <div class="h-full bg-gradient-to-br from-amber-500/10 via-white/[0.05] to-white/[0.02] border border-amber-500/20 rounded-2xl p-5 hover:border-amber-500/40 transition-all duration-300 hover:shadow-lg hover:shadow-amber-500/10">
+              <div class="flex items-start gap-3 mb-3">
+                <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center text-lg shrink-0 shadow-lg shadow-amber-500/30">🔍</div>
+                <div class="flex-1 min-w-0">
+                  <h4 class="text-white font-semibold text-sm leading-tight mb-1">Digital Forensics Essentials</h4>
+                  <p class="text-amber-400 text-xs font-bold">EC-Council</p>
+                </div>
+              </div>
+              <a href="https://drive.google.com/file/d/1WuPZzXZhVMcVz_Zajb0QgwKnn6tOC9vt/view?usp=drive_link" target="_blank" class="inline-flex items-center gap-2 text-xs text-crimson hover:text-white transition-colors">
+                <span>View Certificate</span>
+                <i class="fas fa-external-link-alt text-[10px]"></i>
+              </a>
+            </div>
+          </div>
+          <!-- Card 9 -->
+          <div class="cert-card group fadein">
+            <div class="h-full bg-gradient-to-br from-indigo-500/10 via-white/[0.05] to-white/[0.02] border border-indigo-500/20 rounded-2xl p-5 hover:border-indigo-500/40 transition-all duration-300 hover:shadow-lg hover:shadow-indigo-500/10">
+              <div class="flex items-start gap-3 mb-3">
+                <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-lg shrink-0 shadow-lg shadow-indigo-500/30">💻</div>
+                <div class="flex-1 min-w-0">
+                  <h4 class="text-white font-semibold text-sm leading-tight mb-1">Cyber Security Virtual Internship</h4>
+                  <p class="text-indigo-400 text-xs font-bold">Forage</p>
+                </div>
+              </div>
+              <a href="https://drive.google.com/file/d/1Fl74hj4B4mZOTGlbB_wLG0bzqp52YMlx/view?usp=drive_link" target="_blank" class="inline-flex items-center gap-2 text-xs text-crimson hover:text-white transition-colors">
+                <span>View Certificate</span>
+                <i class="fas fa-external-link-alt text-[10px]"></i>
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
 
       <!-- Other Certifications -->
-
-      <div class="certification-card">
-        <h3>OHSC - Cyber Security</h3>
-        <a href="https://drive.google.com/file/d/1z8u5vM-Dm0pd-PakJ7N7nv_Lju86g9aY/view?usp=drive_link" target="_blank"
-          class="view-certificate-link">View
-          Certificate</a>
-      </div>
-      <div class="certification-card">
-        <h3>GYA Membership</h3>
-        <a href="https://drive.google.com/file/d/1DY-X8Xk3B8-1_9vVokIByNA30YzJ9Oyg/view?usp=drive_link" target="_blank"
-          class="view-certificate-link">View
-          Certificate</a>
-      </div>
-      <div class="certification-card">
-        <h3>Ethical Hacking and Cyber Crime Investigation</h3>
-        <a href="https://drive.google.com/file/d/1uIeLf9hXKFpwIVzNhqtrC-B-Ne_paJFA/view?usp=drive_link" target="_blank"
-          class="view-certificate-link">View
-          Certificate</a>
-      </div>
-      <div class="certification-card">
-        <h3>Crime Scene, Forensic Politics, Security and Investigation</h3>
-        <a href="https://drive.google.com/file/d/1LhHn_GbQa2FBoyPDOoKOqBmUUAjn5Zbj/view?usp=drive_link" target="_blank"
-          class="view-certificate-link">View
-          Certificate</a>
-      </div>
-      <div class="certification-card">
-        <h3>External Field Instructor</h3>
-        <a href="https://drive.google.com/file/d/1Is1gcnfBFgc2OgNM6GZx_9qIAng6d5iY/view?usp=drive_link" target="_blank"
-          class="view-certificate-link">View
-          Certificate</a>
-      </div>
-      <div class="certification-card">
-        <h3>Canva-Graphic-Design</h3>
-        <a href="https://drive.google.com/file/d/1Ubd3VLNrShMM9w9Cuimb6QS90FJbgzIK/view?usp=drive_link" target="_blank"
-          class="view-certificate-link">View
-          Certificate</a>
-      </div>
-      <div class="certification-card">
-        <h3>Canva-Essentials</h3>
-        <a href="https://drive.google.com/file/d/1e39fwf0Au2VQFnndf6H0l3AUO5re-oil/view?usp=drive_link" target="_blank"
-          class="view-certificate-link">View
-          Certificate</a>
-      </div>
-
-
-    </div>
-    <div class="indicator-dots">
-      <div class="indicator"></div>
-      <div class="indicator"></div>
-      <div class="indicator"></div>
-    </div>
-  </section>
-
-  <!-- Achievement Section -->
-  <section class="certificates-wrapper" id="Achievement">
-    <h2>Volunteer & Achievement's </h2>
-    <div class="scrollable-area" id="scrollable-area-volunteer">
-      <div class="Achievement-card">
-        <h3>Global Youth Ambassador (GYA) Member - TheirWorld 🌍</h3>
-        <p><strong>October 2024 - Present</strong></p>
-        <p><strong>Focus: Education 📚</strong></p>
-        <p>Advocating for educational equality and influencing policy to address global education challenges.
-        </p>
-      </div>
-      <div class="Achievement-card">
-        <h3>NSS Volunteer - Karnataka University, Dharwad 🤝</h3>
-        <p><strong>June 2022 - January 2023</strong></p>
-        <p><strong>Focus: Social Services ❤️</strong></p>
-        <p>Contributed to social service projects aimed at supporting and uplifting local communities.</p>
-      </div>
-      <div class="Achievement-card">
-        <h3>Volunteer - Umeed Foundation 🌱</h3>
-        <p><strong>May 2023 - December 2023</strong></p>
-        <p><strong>Focus: Environment 🌍</strong></p>
-        <p>Promoted environmental sustainability through community-driven projects and initiatives.</p>
-      </div>
-    </div>
-    <div class="scrollable-area" id="scrollable-area-achievements">
-      <div class="Achievement-card">
-        <h3>Wr. D. C. Pawate Diamond Jubilee Scholarship & Gold Medal 🏆</h3>
-        <p>Awarded for the highest marks in the September 2021 UG Examination.</p>
-      </div>
-      <div class="Achievement-card">
-        <h3>2nd Rank in Master’s Degree Program 🥈</h3>
-        <p>Received a Silver Medal for outstanding academic performance.</p>
-      </div>
-    </div>
-  </section>
-
-  <!--Contact Section -->
-  <section class="contact" id="contact">
-    <div class="max-width">
-      <h2 class="title fadein">Contact me</h2>
-      <div class="contact-content">
-        <div class="column left">
-          <div class="text">Reach Out to me!</div>
-          <p>Discuss a Project or just want to say Hi? My inbox is open for all.</p>
-          <div class="icons">
-            <div>
-              <div><i class="fas fa-user" style="color: crimson"></i> </div>
-              <div class=" info">
-                <div class="head">Name</div>
-                <div class="sub-title">Karthik Kathari</div>
+      <div>
+        <div class="flex items-center gap-4 mb-6">
+          <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-gray-500/20 to-slate-500/20 flex items-center justify-center text-xl border border-gray-500/20">📚</div>
+          <h3 class="text-lg font-bold text-white">Other Certifications</h3>
+          <div class="flex-1 h-px bg-gradient-to-r from-gray-500/30 to-transparent"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <!-- Card 1 -->
+          <div class="cert-card group fadein">
+            <div class="h-full bg-gradient-to-br from-white/[0.05] to-white/[0.02] border border-white/10 rounded-2xl p-5 hover:border-crimson/30 transition-all duration-300">
+              <div class="flex items-start gap-3 mb-3">
+                <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-gray-500/20 to-slate-600/20 flex items-center justify-center text-lg shrink-0">🎓</div>
+                <div class="flex-1 min-w-0">
+                  <h4 class="text-white font-semibold text-sm leading-tight mb-1">OHSC - Cyber Security</h4>
+                  <p class="text-white/50 text-xs">OHSC</p>
+                </div>
               </div>
-            </div>
-            <div>
-              <i class="fas fa-map-marker-alt" style="color: crimson"></i>
-              <div class="info">
-                <div class="head">Address</div>
-                <div class="sub-title">Dharwad, Karnataka 580002</div>
-              </div>
-            </div>
-            <div>
-              <i class="fas fa-envelope email-icon" style="color: crimson;"></i>
-              <div class="info">
-                <div class="head">Email</div>
-                <div class="sub-title"><a href="mailto:karthikmk.workspace@gmail.com"
-                    target="_blank">karthikmk.workspace@gmail.com</a></div>
-              </div>
+              <a href="https://drive.google.com/file/d/1z8u5vM-Dm0pd-PakJ7N7nv_Lju86g9aY/view?usp=drive_link" target="_blank" class="inline-flex items-center gap-2 text-xs text-crimson hover:text-white transition-colors">
+                <span>View Certificate</span>
+                <i class="fas fa-external-link-alt text-[10px]"></i>
+              </a>
             </div>
           </div>
-          <div class="text1">Stay Connected</div>
-          <div>
-            <div class="wrapper">
-              <div class="button1">
-                <div class="icon">
-                  <a href="https://www.linkedin.com/in/karthik-kathari-434495154/" target="_blank" rel="noreferrer">
-                    <i class="fab fa-linkedin"></i>
-                  </a>
+          <!-- Card 2 -->
+          <div class="cert-card group fadein">
+            <div class="h-full bg-gradient-to-br from-white/[0.05] to-white/[0.02] border border-white/10 rounded-2xl p-5 hover:border-crimson/30 transition-all duration-300">
+              <div class="flex items-start gap-3 mb-3">
+                <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-crimson/20 to-pink-600/20 flex items-center justify-center text-lg shrink-0">🌍</div>
+                <div class="flex-1 min-w-0">
+                  <h4 class="text-white font-semibold text-sm leading-tight mb-1">GYA Membership</h4>
+                  <p class="text-white/50 text-xs">TheirWorld</p>
                 </div>
-                <span style="color: black;">LinkedIn </span>
               </div>
-              <div class="button1">
-                <div class="icon">
-                  <a href="https://github.com/Karthik-Kathari/" target="_blank" rel="noreferrer">
-                    <i class="fab fa-github"></i>
-                  </a>
+              <a href="https://drive.google.com/file/d/1DY-X8Xk3B8-1_9vVokIByNA30YzJ9Oyg/view?usp=drive_link" target="_blank" class="inline-flex items-center gap-2 text-xs text-crimson hover:text-white transition-colors">
+                <span>View Certificate</span>
+                <i class="fas fa-external-link-alt text-[10px]"></i>
+              </a>
+            </div>
+          </div>
+          <!-- Card 3 -->
+          <div class="cert-card group fadein">
+            <div class="h-full bg-gradient-to-br from-white/[0.05] to-white/[0.02] border border-white/10 rounded-2xl p-5 hover:border-crimson/30 transition-all duration-300">
+              <div class="flex items-start gap-3 mb-3">
+                <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-red-500/20 to-orange-600/20 flex items-center justify-center text-lg shrink-0">👨‍💻</div>
+                <div class="flex-1 min-w-0">
+                  <h4 class="text-white font-semibold text-sm leading-tight mb-1">Ethical Hacking & Cyber Crime</h4>
+                  <p class="text-white/50 text-xs">Professional</p>
                 </div>
-                <span style="color: black;">Github </span>
+              </div>
+              <a href="https://drive.google.com/file/d/1uIeLf9hXKFpwIVzNhqtrC-B-Ne_paJFA/view?usp=drive_link" target="_blank" class="inline-flex items-center gap-2 text-xs text-crimson hover:text-white transition-colors">
+                <span>View Certificate</span>
+                <i class="fas fa-external-link-alt text-[10px]"></i>
+              </a>
+            </div>
+          </div>
+          <!-- Card 4 -->
+          <div class="cert-card group fadein">
+            <div class="h-full bg-gradient-to-br from-white/[0.05] to-white/[0.02] border border-white/10 rounded-2xl p-5 hover:border-crimson/30 transition-all duration-300">
+              <div class="flex items-start gap-3 mb-3">
+                <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-amber-500/20 to-yellow-600/20 flex items-center justify-center text-lg shrink-0">🔎</div>
+                <div class="flex-1 min-w-0">
+                  <h4 class="text-white font-semibold text-sm leading-tight mb-1">Crime Scene & Forensic Investigation</h4>
+                  <p class="text-white/50 text-xs">Forensic</p>
+                </div>
+              </div>
+              <a href="https://drive.google.com/file/d/1LhHn_GbQa2FBoyPDOoKOqBmUUAjn5Zbj/view?usp=drive_link" target="_blank" class="inline-flex items-center gap-2 text-xs text-crimson hover:text-white transition-colors">
+                <span>View Certificate</span>
+                <i class="fas fa-external-link-alt text-[10px]"></i>
+              </a>
+            </div>
+          </div>
+          <!-- Card 5 -->
+          <div class="cert-card group fadein">
+            <div class="h-full bg-gradient-to-br from-white/[0.05] to-white/[0.02] border border-white/10 rounded-2xl p-5 hover:border-crimson/30 transition-all duration-300">
+              <div class="flex items-start gap-3 mb-3">
+                <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-blue-500/20 to-indigo-600/20 flex items-center justify-center text-lg shrink-0">👨‍🏫</div>
+                <div class="flex-1 min-w-0">
+                  <h4 class="text-white font-semibold text-sm leading-tight mb-1">External Field Instructor</h4>
+                  <p class="text-white/50 text-xs">Professional</p>
+                </div>
+              </div>
+              <a href="https://drive.google.com/file/d/1Is1gcnfBFgc2OgNM6GZx_9qIAng6d5iY/view?usp=drive_link" target="_blank" class="inline-flex items-center gap-2 text-xs text-crimson hover:text-white transition-colors">
+                <span>View Certificate</span>
+                <i class="fas fa-external-link-alt text-[10px]"></i>
+              </a>
+            </div>
+          </div>
+          <!-- Card 6 -->
+          <div class="cert-card group fadein">
+            <div class="h-full bg-gradient-to-br from-white/[0.05] to-white/[0.02] border border-white/10 rounded-2xl p-5 hover:border-crimson/30 transition-all duration-300">
+              <div class="flex items-start gap-3 mb-3">
+                <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-teal-500/20 to-cyan-600/20 flex items-center justify-center text-lg shrink-0">🎨</div>
+                <div class="flex-1 min-w-0">
+                  <h4 class="text-white font-semibold text-sm leading-tight mb-1">Canva Graphic Design</h4>
+                  <p class="text-white/50 text-xs">Canva</p>
+                </div>
+              </div>
+              <a href="https://drive.google.com/file/d/1Ubd3VLNrShMM9w9Cuimb6QS90FJbgzIK/view?usp=drive_link" target="_blank" class="inline-flex items-center gap-2 text-xs text-crimson hover:text-white transition-colors">
+                <span>View Certificate</span>
+                <i class="fas fa-external-link-alt text-[10px]"></i>
+              </a>
+            </div>
+          </div>
+          <!-- Card 7 -->
+          <div class="cert-card group fadein">
+            <div class="h-full bg-gradient-to-br from-white/[0.05] to-white/[0.02] border border-white/10 rounded-2xl p-5 hover:border-crimson/30 transition-all duration-300">
+              <div class="flex items-start gap-3 mb-3">
+                <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-teal-500/20 to-blue-600/20 flex items-center justify-center text-lg shrink-0">✨</div>
+                <div class="flex-1 min-w-0">
+                  <h4 class="text-white font-semibold text-sm leading-tight mb-1">Canva Essentials</h4>
+                  <p class="text-white/50 text-xs">Canva</p>
+                </div>
+              </div>
+              <a href="https://drive.google.com/file/d/1e39fwf0Au2VQFnndf6H0l3AUO5re-oil/view?usp=drive_link" target="_blank" class="inline-flex items-center gap-2 text-xs text-crimson hover:text-white transition-colors">
+                <span>View Certificate</span>
+                <i class="fas fa-external-link-alt text-[10px]"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ ACHIEVEMENTS ═══════════════════════════════════════════ -->
+  <section id="Achievement" class="py-28 bg-[#111117] font-poppins relative overflow-hidden">
+    <!-- Background Decoration -->
+    <div class="absolute top-20 left-10 w-72 h-72 bg-crimson/5 rounded-full blur-[100px]"></div>
+    <div class="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/5 rounded-full blur-[100px]"></div>
+    
+    <div class="max-w-[1200px] mx-auto px-6 relative z-10">
+      <!-- Section Header -->
+      <div class="text-center mb-16">
+        <h2 class="section-title fadein inline-block" data-subtitle="making an impact">Volunteer & Achievements</h2>
+        <p class="text-white/50 mt-4 max-w-2xl mx-auto">Dedicated to creating positive change through volunteer work and striving for excellence in academics.</p>
+      </div>
+      
+      <!-- Impact Stats -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+        <div class="bg-white/[0.03] border border-white/10 rounded-2xl p-6 text-center hover:border-crimson/30 transition-all duration-300">
+          <div class="text-3xl mb-2">🌍</div>
+          <div class="text-2xl font-bold text-white">3+</div>
+          <div class="text-white/50 text-sm">Organizations</div>
+        </div>
+        <div class="bg-white/[0.03] border border-white/10 rounded-2xl p-6 text-center hover:border-crimson/30 transition-all duration-300">
+          <div class="text-3xl mb-2">⏱️</div>
+          <div class="text-2xl font-bold text-white">2+</div>
+          <div class="text-white/50 text-sm">Years Active</div>
+        </div>
+        <div class="bg-white/[0.03] border border-white/10 rounded-2xl p-6 text-center hover:border-crimson/30 transition-all duration-300">
+          <div class="text-3xl mb-2">🏆</div>
+          <div class="text-2xl font-bold text-white">2</div>
+          <div class="text-white/50 text-sm">Awards Won</div>
+        </div>
+        <div class="bg-white/[0.03] border border-white/10 rounded-2xl p-6 text-center hover:border-crimson/30 transition-all duration-300">
+          <div class="text-3xl mb-2">🎯</div>
+          <div class="text-2xl font-bold text-white">100%</div>
+          <div class="text-white/50 text-sm">Commitment</div>
+        </div>
+      </div>
+
+      <!-- Volunteer Experience Header -->
+      <div class="flex items-center gap-4 mb-8">
+        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-crimson/20 to-pink-600/20 flex items-center justify-center text-2xl border border-crimson/20">🤲</div>
+        <div>
+          <h3 class="text-xl font-bold text-white">Volunteer Experience</h3>
+          <p class="text-white/50 text-sm">Giving back to the community</p>
+        </div>
+        <div class="flex-1 h-px bg-gradient-to-r from-crimson/50 to-transparent"></div>
+      </div>
+      
+      <!-- Volunteer Cards -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-16">
+        <!-- Card 1: GYA -->
+        <div class="lg:col-span-2 achiev-card group fadein">
+          <div class="h-full bg-gradient-to-br from-crimson/10 via-white/[0.05] to-white/[0.02] border border-crimson/20 rounded-3xl p-8 hover:border-crimson/40 transition-all duration-500 hover:shadow-2xl hover:shadow-crimson/20 relative overflow-hidden">
+            <div class="absolute -right-10 -top-10 w-40 h-40 bg-crimson/20 rounded-full blur-3xl group-hover:bg-crimson/30 transition-all duration-500"></div>
+            <div class="relative z-10">
+              <div class="flex flex-wrap items-center gap-3 mb-4">
+                <span class="px-3 py-1 bg-crimson/20 border border-crimson/30 rounded-full text-crimson text-xs font-semibold">Currently Active</span>
+                <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-white/60 text-xs">Oct 2024 - Present</span>
+              </div>
+              <div class="flex items-start gap-4 mb-4">
+                <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-crimson to-pink-600 flex items-center justify-center text-3xl shadow-lg shadow-crimson/30 shrink-0">🌍</div>
+                <div>
+                  <h3 class="text-2xl font-bold text-white mb-1">Global Youth Ambassador</h3>
+                  <p class="text-crimson font-medium">TheirWorld</p>
+                </div>
+              </div>
+              <div class="bg-white/[0.03] rounded-xl p-4 mb-4">
+                <p class="text-white/70 text-sm leading-relaxed"><span class="text-crimson font-semibold">Focus:</span> Education Advocacy 📚</p>
+              </div>
+              <p class="text-white/60 leading-relaxed">Advocating for educational equality and influencing policy to address global education challenges. Working with international organizations to create lasting change in children's education worldwide.</p>
+              <div class="mt-6 flex flex-wrap gap-2">
+                <span class="px-3 py-1.5 bg-crimson/10 rounded-lg text-crimson text-xs font-medium">Policy Making</span>
+                <span class="px-3 py-1.5 bg-crimson/10 rounded-lg text-crimson text-xs font-medium">Education</span>
+                <span class="px-3 py-1.5 bg-crimson/10 rounded-lg text-crimson text-xs font-medium">Global Impact</span>
               </div>
             </div>
           </div>
         </div>
-        <div class="column right">
-          <div class="text">Message me</div>
-          <form action="#" onsubmit="sendEmail(event)" id="contactForm">
-            <div class="fields">
-              <div class="field name">
-                <input type="text" placeholder="Name" name="user_name" required="">
+
+        <!-- Card 2: NSS -->
+        <div class="achiev-card group fadein">
+          <div class="h-full bg-gradient-to-br from-white/[0.05] to-white/[0.02] border border-white/10 rounded-3xl p-6 hover:border-orange-500/30 transition-all duration-500 hover:shadow-xl hover:shadow-orange-500/10 relative overflow-hidden">
+            <div class="absolute -right-10 -top-10 w-32 h-32 bg-orange-500/10 rounded-full blur-3xl group-hover:bg-orange-500/20 transition-all duration-500"></div>
+            <div class="relative z-10">
+              <span class="inline-block px-3 py-1 bg-white/5 border border-white/10 rounded-full text-white/50 text-xs mb-4">Jun 2022 - Jan 2023</span>
+              <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-orange-500/20 to-red-500/20 flex items-center justify-center text-3xl border border-orange-500/20 mb-4">🤝</div>
+              <h3 class="text-xl font-bold text-white mb-2">NSS Volunteer</h3>
+              <p class="text-orange-400 text-sm font-medium mb-3">Karnataka University, Dharwad</p>
+              <div class="bg-white/[0.03] rounded-lg p-3 mb-3">
+                <p class="text-white/70 text-sm"><span class="text-orange-400 font-semibold">Focus:</span> Social Services ❤️</p>
               </div>
-              <div class="field email">
-                <input type="email" placeholder="Email" name="email_id" required="">
+              <p class="text-white/60 text-sm leading-relaxed">Contributed to social service projects aimed at supporting and uplifting local communities through various initiatives.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Umeed -->
+        <div class="lg:col-span-3 achiev-card group fadein">
+          <div class="h-full bg-gradient-to-br from-green-500/10 via-white/[0.05] to-white/[0.02] border border-green-500/20 rounded-3xl p-6 hover:border-green-500/40 transition-all duration-500 hover:shadow-xl hover:shadow-green-500/10 relative overflow-hidden">
+            <div class="absolute right-20 top-0 w-40 h-40 bg-green-500/10 rounded-full blur-3xl group-hover:bg-green-500/20 transition-all duration-500"></div>
+            <div class="relative z-10 flex flex-col md:flex-row md:items-center gap-6">
+              <div class="flex items-center gap-4 md:w-1/3">
+                <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center text-3xl shadow-lg shadow-green-500/30 shrink-0">🌱</div>
+                <div>
+                  <span class="inline-block px-3 py-1 bg-white/5 border border-white/10 rounded-full text-white/50 text-xs mb-1">May 2023 - Dec 2023</span>
+                  <h3 class="text-xl font-bold text-white">Umeed Foundation</h3>
+                </div>
+              </div>
+              <div class="md:w-1/3">
+                <div class="bg-white/[0.03] rounded-lg p-3">
+                  <p class="text-white/70 text-sm"><span class="text-green-400 font-semibold">Focus:</span> Environment & Sustainability 🌍</p>
+                </div>
+              </div>
+              <div class="md:w-1/3">
+                <p class="text-white/60 text-sm leading-relaxed">Promoted environmental sustainability through community-driven projects and green initiatives, creating awareness about climate change.</p>
               </div>
             </div>
-            <div class="field">
-              <input type="text" placeholder="Subject" name="subject" required="">
+          </div>
+        </div>
+      </div>
+
+      <!-- Awards Header -->
+      <div class="flex items-center gap-4 mb-8">
+        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-yellow-500/20 to-amber-600/20 flex items-center justify-center text-2xl border border-yellow-500/20">🏅</div>
+        <div>
+          <h3 class="text-xl font-bold text-white">Honours & Awards</h3>
+          <p class="text-white/50 text-sm">Recognition for academic excellence</p>
+        </div>
+        <div class="flex-1 h-px bg-gradient-to-r from-yellow-500/50 to-transparent"></div>
+      </div>
+
+      <!-- Awards Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Award 1: Gold Medal -->
+        <div class="achiev-card group fadein">
+          <div class="h-full bg-gradient-to-br from-yellow-500/15 via-amber-500/5 to-white/[0.02] border border-yellow-500/30 rounded-3xl p-8 hover:border-yellow-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-yellow-500/20 relative overflow-hidden">
+            <div class="absolute -right-10 -top-10 w-40 h-40 bg-yellow-500/20 rounded-full blur-3xl group-hover:bg-yellow-500/30 transition-all duration-500"></div>
+            <div class="relative z-10">
+              <div class="flex items-start gap-5">
+                <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-yellow-400 via-amber-500 to-orange-500 flex items-center justify-center text-4xl shadow-xl shadow-yellow-500/30 shrink-0 group-hover:scale-110 transition-transform duration-500">🏆</div>
+                <div class="flex-1">
+                  <div class="inline-block px-3 py-1 bg-yellow-500/20 border border-yellow-500/30 rounded-full text-yellow-400 text-xs font-bold mb-3">GOLD MEDAL</div>
+                  <h4 class="text-xl font-bold text-white mb-2">Diamond Jubilee Scholarship</h4>
+                  <p class="text-yellow-400/80 font-medium mb-3">Wr. D. C. Pawate Gold Medal</p>
+                  <div class="bg-white/[0.05] rounded-xl p-4 border-l-4 border-yellow-500">
+                    <p class="text-white/70 text-sm leading-relaxed">Awarded for achieving the <span class="text-yellow-400 font-semibold">highest marks</span> in the September 2021 UG Examination - a testament to academic dedication and excellence.</p>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="field textarea">
-              <textarea cols="30" rows="10" placeholder="Describe Project..." name="message" required=""></textarea>
+          </div>
+        </div>
+
+        <!-- Award 2: Silver Medal -->
+        <div class="achiev-card group fadein">
+          <div class="h-full bg-gradient-to-br from-gray-400/15 via-slate-400/5 to-white/[0.02] border border-gray-400/30 rounded-3xl p-8 hover:border-gray-400/50 transition-all duration-500 hover:shadow-2xl hover:shadow-gray-400/20 relative overflow-hidden">
+            <div class="absolute -right-10 -top-10 w-40 h-40 bg-gray-400/20 rounded-full blur-3xl group-hover:bg-gray-400/30 transition-all duration-500"></div>
+            <div class="relative z-10">
+              <div class="flex items-start gap-5">
+                <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-gray-300 via-slate-400 to-gray-500 flex items-center justify-center text-4xl shadow-xl shadow-gray-400/30 shrink-0 group-hover:scale-110 transition-transform duration-500">🥈</div>
+                <div class="flex-1">
+                  <div class="inline-block px-3 py-1 bg-gray-400/20 border border-gray-400/30 rounded-full text-gray-300 text-xs font-bold mb-3">SILVER MEDAL</div>
+                  <h4 class="text-xl font-bold text-white mb-2">2nd Rank in Master's Program</h4>
+                  <p class="text-gray-300/80 font-medium mb-3">Academic Excellence Award</p>
+                  <div class="bg-white/[0.05] rounded-xl p-4 border-l-4 border-gray-400">
+                    <p class="text-white/70 text-sm leading-relaxed">Received a <span class="text-gray-300 font-semibold">Silver Medal</span> for outstanding academic performance and securing 2nd rank in the Master's Degree Program.</p>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="button">
-              <button type="submit">Send Message <i class="fas fa-paper-plane"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CONTACT ════════════════════════════════════════════ -->
+  <section id="contact" class="py-24 bg-[#0d0d12] font-poppins">
+    <div class="max-w-[1300px] mx-auto px-6">
+      <h2 class="section-title fadein" data-subtitle="get in touch">Contact Me</h2>
+
+      <div class="mt-16 flex flex-col md:flex-row gap-12">
+
+        <!-- Left: info -->
+        <div class="flex-1 fadein">
+          <h3 class="text-2xl font-bold text-white mb-2">Reach Out to me!</h3>
+          <p class="text-white/60 mb-8">Discuss a project or just want to say Hi? My inbox is open for all.</p>
+
+          <div class="space-y-1 mb-8">
+            <div class="contact-row">
+              <div class="ci-icon"><i class="fas fa-user"></i></div>
+              <div>
+                <div class="text-xs text-white/40 uppercase tracking-widest mb-1">Name</div>
+                <div class="text-white font-medium">Karthik Kathari</div>
+              </div>
             </div>
+            <div class="contact-row">
+              <div class="ci-icon"><i class="fas fa-map-marker-alt"></i></div>
+              <div>
+                <div class="text-xs text-white/40 uppercase tracking-widest mb-1">Address</div>
+                <div class="text-white font-medium">Dharwad, Karnataka 580002</div>
+              </div>
+            </div>
+            <div class="contact-row">
+              <div class="ci-icon"><i class="fas fa-envelope"></i></div>
+              <div>
+                <div class="text-xs text-white/40 uppercase tracking-widest mb-1">Email</div>
+                <a href="mailto:karthikmk.workspace@gmail.com" target="_blank"
+                   class="text-crimson font-medium hover:underline">karthikmk.workspace@gmail.com</a>
+              </div>
+            </div>
+          </div>
+
+          <p class="text-sm font-semibold text-white/50 uppercase tracking-widest mb-4">Stay Connected</p>
+          <div class="flex gap-4">
+            <div class="social-btn">
+              <a href="https://www.linkedin.com/in/karthik-kathari-434495154/" target="_blank" rel="noreferrer" class="icon text-white text-xl">
+                <i class="fab fa-linkedin"></i>
+              </a>
+              <span>LinkedIn</span>
+            </div>
+            <div class="social-btn">
+              <a href="https://github.com/Karthik-Kathari/" target="_blank" rel="noreferrer" class="icon text-white text-xl">
+                <i class="fab fa-github"></i>
+              </a>
+              <span>GitHub</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: form -->
+        <div class="flex-1 fadein">
+          <h3 class="text-2xl font-bold text-white mb-6">Message me</h3>
+          <form action="#" onsubmit="sendEmail(event)" id="contactForm" class="space-y-4">
+            <div class="flex flex-col sm:flex-row gap-4">
+              <input type="text" placeholder="Name" name="user_name" required
+                     class="contact-input flex-1">
+              <input type="email" placeholder="Email" name="email_id" required
+                     class="contact-input flex-1">
+            </div>
+            <input type="text" placeholder="Subject" name="subject" required class="contact-input">
+            <textarea rows="6" placeholder="Describe Project..." name="message" required
+                      class="contact-input resize-none"></textarea>
+            <button type="submit" class="btn-crimson w-full justify-center">
+              Send Message <i class="fas fa-paper-plane"></i>
+            </button>
           </form>
         </div>
+
       </div>
     </div>
   </section>
 
-  <footer>
-    <span>Created By <a href="https://www.linkedin.com/in/karthik-kathari-434495154/" target="_blank"
-        rel="noreferrer">Karthik Kathari</a> | <span class="far fa-copyright"></span>&nbsp;<span id="year">2025</span>
-      All
-      Rights Reserved</span>
-    <img src="img/spider.gif" alt="Description of the GIF" width="50px" height="55px">
+  <!-- Premium Toast Notification -->
+  <div id="toast-notification" class="toast-notification">
+    <div class="toast-icon-wrap">
+      <svg id="toast-icon-success" class="toast-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      <svg id="toast-icon-error" class="toast-icon hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </div>
+    <div class="toast-body">
+      <p id="toast-title" class="toast-title">Message Sent!</p>
+      <p id="toast-msg" class="toast-msg">I'll get back to you soon.</p>
+    </div>
+    <button onclick="closeToast()" class="toast-close">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <div class="toast-progress"></div>
+  </div>
 
+  <footer class="bg-[#07070b] border-t border-white/[0.07] py-10 px-4 font-poppins text-white/50 text-sm text-center relative overflow-visible">
+    <img src="img/spider.gif" alt="spider gif" class="spider-anim">
+    <span>Created By <a href="https://www.linkedin.com/in/karthik-kathari-434495154/" target="_blank" rel="noreferrer" class="text-crimson hover:text-white transition-colors">Karthik Kathari</a> &nbsp;|&nbsp; <i class="far fa-copyright"></i>&nbsp;<span id="year">2025</span> All Rights Reserved</span>
   </footer>
 
-  <script src="./js/script.js" async=""></script>
+  <script src="./js/script.js"></script>
 </body>
 
 </html>

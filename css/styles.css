@@ -84,6 +84,26 @@ html, body {
   display: none;
 }
 
+/* Hamburger toggle icon (mobile only by default) */
+.menu-toggle {
+  display: none;
+  color: #fff;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+.menu-toggle i {
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
 /* Scroll button styling */
 .scroll-up-btn {
   position: fixed;
@@ -508,42 +528,71 @@ padding-top: 50px!important;
 .projects .title::after {
   content: "check my work";
 }
+.projects {
+  position: relative;
+}
+
+.projects .carousel {
+  padding: 20px 40px 40px;
+}
+
 .projects .carousel .card {
-  background: #222;
-  border-radius: 10px;
-  padding: 25px 20px;
-  text-align: center;
-  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #1d1d1f 0%, #27272b 100%);
+  border-radius: 18px;
+  padding: 28px 24px;
+  text-align: left;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  min-height: 430px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
 }
+
 .projects .carousel .card:hover {
-  background: rgb(48, 48, 48);
+  transform: translateY(-8px);
+  box-shadow: 0 30px 45px rgba(0, 0, 0, 0.55);
 }
+
 .projects .carousel .card .box {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  transition: all 0.3s ease;
-}
-.projects .carousel .card:hover .box {
-  transform: scale(0.99);
+  gap: 14px;
 }
 
-.projects .carousel .card p {
-  font-size: 16px;
-  padding-top: 10px;
-  color: #fff;
+.projects .carousel .card:hover .box img {
+  transform: scale(1.02);
 }
+
+.projects .carousel .card a p {
+  font-size: 20px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+}
+
+.projects .carousel .card > p {
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.75);
+  margin-top: auto;
+}
+
 .projects .carousel .card img {
-  height: 250px;
-  width: 280px;
-  object-fit: fill;
-  border-radius: 10px;
-  border: 2px solid rgb(255, 255, 255);
-  transition: all 0.3s ease;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.35);
 }
+
 .projects .carousel .card:hover img {
-  transform: scale(1.1);
+  transform: scale(1.05);
+  box-shadow: 0 18px 30px rgba(0, 0, 0, 0.45);
 }
 .owl-dots {
   text-align: center;
@@ -1001,20 +1050,77 @@ text-decoration: underline;
 }
 
 /* Projects Next / prev button */
-#projects > div > div > div:nth-child(4) > button.owl-prev,
-#projects > div > div > div:nth-child(4) > button.owl-next{
-  font-size: 90px;
-  font-weight: bolder;
-  color: red;
-  /* box-shadow: 4px 2px 40px 2px rgba(255, 0, 0, 0.5); */
-  position: relative;
-  top: -300px;
-  margin: 0%;
-  
-  }
-.owl-nav{
+.projects .owl-carousel .owl-nav {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
   display: flex;
   justify-content: space-between;
+  transform: translateY(-50%);
+  pointer-events: none;
+  padding: 0 10px;
+}
+
+.projects .owl-carousel .owl-nav button {
+  pointer-events: auto;
+  width: 54px;
+  height: 54px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(10, 10, 10, 0.6);
+  color: #ff3155;
+  font-size: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+}
+
+.projects .owl-carousel .owl-nav button span {
+  display: none;
+}
+
+.projects .owl-carousel .owl-nav button.owl-prev::after,
+.projects .owl-carousel .owl-nav button.owl-next::after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 20px;
+  color: inherit;
+}
+
+.projects .owl-carousel .owl-nav button.owl-prev::after {
+  content: "\f104";
+}
+
+.projects .owl-carousel .owl-nav button.owl-next::after {
+  content: "\f105";
+}
+
+.projects .owl-carousel .owl-nav button:hover {
+  background: #ff3155;
+  color: #fff;
+  transform: scale(1.08);
+}
+
+@media (max-width: 768px) {
+  .projects .owl-carousel {
+    padding: 20px 10px 50px;
+  }
+
+  .projects .owl-carousel .owl-nav {
+    position: static;
+    transform: none;
+    justify-content: center;
+    gap: 16px;
+    padding-top: 20px;
+  }
+
+  .projects .owl-carousel .owl-nav button {
+    width: 46px;
+    height: 46px;
+  }
 }
 
 

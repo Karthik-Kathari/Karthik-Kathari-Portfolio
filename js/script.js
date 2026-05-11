@@ -1,32 +1,146 @@
 // Initialize EmailJS
 emailjs.init("DOz9Qddk_BiZ8Ovb8");
 
+// Premium toast helper
+var toastTimer;
+function showToast(type, title, msg) {
+  var toast = document.getElementById('toast-notification');
+  var successIcon = document.getElementById('toast-icon-success');
+  var errorIcon   = document.getElementById('toast-icon-error');
+  var toastTitle  = document.getElementById('toast-title');
+  var toastMsg    = document.getElementById('toast-msg');
+  var progress    = toast.querySelector('.toast-progress');
+
+  // Reset
+  clearTimeout(toastTimer);
+  toast.classList.remove('toast-show', 'toast-error');
+  progress.style.animation = 'none';
+  progress.offsetHeight; // reflow to restart animation
+
+  // Set content
+  toastTitle.textContent = title;
+  toastMsg.textContent   = msg;
+
+  if (type === 'error') {
+    toast.classList.add('toast-error');
+    successIcon.classList.add('hidden');
+    errorIcon.classList.remove('hidden');
+  } else {
+    successIcon.classList.remove('hidden');
+    errorIcon.classList.add('hidden');
+  }
+
+  // Show
+  toast.classList.add('toast-show');
+  progress.style.animation = 'toast-timer 10s linear forwards';
+
+  // Confetti burst on success
+  if (type === 'success') { launchConfetti(); }
+
+  // Auto-dismiss after 10s
+  toastTimer = setTimeout(function() { closeToast(); }, 10000);
+}
+
+function launchConfetti() {
+  var container = document.getElementById('confetti-container');
+  if (!container) {
+    container = document.createElement('div');
+    container.id = 'confetti-container';
+    container.className = 'confetti-container';
+    document.body.appendChild(container);
+  }
+  container.innerHTML = '';
+  var colors = ['#22c55e','#4ade80','#86efac','#fbbf24','#f472b6','#60a5fa','#a78bfa','#34d399','#fff'];
+  var shapes = ['2px','50%','0px'];
+  for (var i = 0; i < 80; i++) {
+    var p = document.createElement('div');
+    p.className = 'confetti-piece';
+    var size = (Math.random() * 8 + 5) + 'px';
+    p.style.cssText = [
+      'left:' + (Math.random() * 100) + '%',
+      'top:' + (Math.random() * -10 - 2) + '%',
+      'width:' + size,
+      'height:' + size,
+      'background:' + colors[Math.floor(Math.random() * colors.length)],
+      'border-radius:' + shapes[Math.floor(Math.random() * shapes.length)],
+      'animation-duration:' + (Math.random() * 1.5 + 1.5) + 's',
+      'animation-delay:' + (Math.random() * 0.6) + 's',
+      'transform:translateX(' + (Math.random() * 200 - 100) + 'px)'
+    ].join(';');
+    container.appendChild(p);
+  }
+  setTimeout(function() { container.innerHTML = ''; }, 3500);
+}
+
+function closeToast() {
+  var toast = document.getElementById('toast-notification');
+  toast.classList.remove('toast-show');
+}
+
 // email sending function from the contact form:
 function sendEmail(event) {
   event.preventDefault();
+  var btn = event.target.querySelector('button[type="submit"]');
+  btn.disabled = true;
+  btn.innerHTML = '<i class="fas fa-circle-notch fa-spin mr-2"></i>Sending...';
+
   emailjs.sendForm("service_m0ma4ei", "template_er99a2z", "#contactForm", "DOz9Qddk_BiZ8Ovb8")
     .then(function (response) {
-      alert("Email sent successfully!");
+      showToast('success', 'Message Sent!', "Thanks for reaching out — I'll get back to you soon.");
+      document.getElementById('contactForm').reset();
+      btn.disabled = false;
+      btn.innerHTML = 'Send Message <i class="fas fa-paper-plane"></i>';
     }, function (error) {
-      alert("Failed to send email. Please try again.");
+      showToast('error', 'Failed to Send', 'Something went wrong. Please try again.');
+      btn.disabled = false;
+      btn.innerHTML = 'Send Message <i class="fas fa-paper-plane"></i>';
     });
 }
 
 $(document).ready(function () {
-  // Typed.js initialization for two elements
-  $(".typing").typed({
-    strings: ["Frontend Developer", "Full Stack Developer Enthusiast"],
-    typeSpeed: 100,
-    backSpeed: 80,
-    loop: true
-  });
+  // Custom Cursor - GPU-accelerated, lag-free
+  const cursor = document.getElementById('cursor');
+  if (cursor && window.matchMedia('(pointer: fine)').matches) {
+    let mouseX = 0, mouseY = 0;
 
-  $(".typing2").typed({
-    strings: ["Frontend Developer", "Full Stack Developer"],
-    typeSpeed: 100,
-    backSpeed: 80,
-    loop: true
-  });
+    // Track raw mouse position
+    document.addEventListener('mousemove', function(e) {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      // Use translate3d on GPU layer — no layout/paint triggered
+      cursor.style.transform = 'translate3d(calc(' + mouseX + 'px - 50%), calc(' + mouseY + 'px - 50%), 0)';
+    }, { passive: true });
+
+    // Remove initial CSS transform override from class
+    cursor.style.left = '0';
+    cursor.style.top = '0';
+
+    // Hover effect on interactive elements
+    $(document).on('mouseenter', 'a, button, .project-card-new, .scroll-indicator, .skill-pill, .btn-crimson, .btn-outline', function() {
+      cursor.classList.add('hover');
+    }).on('mouseleave', 'a, button, .project-card-new, .scroll-indicator, .skill-pill, .btn-crimson, .btn-outline', function() {
+      cursor.classList.remove('hover');
+    });
+  }
+
+  // Typed.js initialization (v2 API)
+  if (document.querySelector('.typing')) {
+    new Typed('.typing', {
+      strings: ['Frontend Developer', 'Full Stack Developer'],
+      typeSpeed: 100,
+      backSpeed: 80,
+      loop: true
+    });
+  }
+
+  if (document.querySelector('.typing2')) {
+    new Typed('.typing2', {
+      strings: ['Frontend Developer', 'Full Stack Developer'],
+      typeSpeed: 100,
+      backSpeed: 80,
+      loop: true
+    });
+  }
 
   // Waypoints fade-in animation
   $('.fadein').waypoint(function () {
@@ -37,8 +151,15 @@ $(document).ready(function () {
 
 
   // Toggle menu on menu button click
-  $('.menu-btn').click(function () {
-    $('.navbar .menu').toggle();
+  $('.menu-toggle').click(function () {
+    $('.nav-menu').toggleClass('active');
+    $(this).find('i').toggleClass('fa-bars fa-times');
+  });
+
+  // Close menu when a nav link is clicked
+  $('.nav-menu .nav-link').click(function () {
+    $('.nav-menu').removeClass('active');
+    $('.menu-toggle i').removeClass('fa-times').addClass('fa-bars');
   });
 
   // Scrollable area drag-scroll functionality
@@ -77,16 +198,29 @@ $(document).ready(function () {
 
 
 $(document).ready(function () {
-  // Sticky navbar on scroll
+  var navbar = $(".navbar");
+  var scrollTimeout;
+  
+  // Smart navbar - shrink when scrolling, expand when stopped (always visible)
   $(window).scroll(function () {
-    if ($(this).scrollTop() > 20) {
-      $(".navbar").addClass("sticky");
-    } else {
-      $(".navbar").removeClass("sticky");
-    }
+    var scrollTop = $(this).scrollTop();
+    
+    // Add shrunk class when scrolling (creates shrink effect)
+    navbar.addClass("shrunk");
+    
+    // Clear previous timeout
+    clearTimeout(scrollTimeout);
+    
+    // Set timeout to expand when scrolling stops
+    scrollTimeout = setTimeout(function() {
+      navbar.removeClass("shrunk");
+    }, 200);
+    
+    // Always ensure navbar is visible (remove hidden if present)
+    navbar.removeClass("hidden");
 
     // Scroll-up button visibility
-    if ($(this).scrollTop() > 500) {
+    if (scrollTop > 500) {
       $(".scroll-up-btn").addClass("show");
     } else {
       $(".scroll-up-btn").removeClass("show");
@@ -110,32 +244,11 @@ $(document).ready(function () {
     $("html, body").scrollTop(0);
   });
 
-  // Typing animation configuration for both .typing2 and .typing
-  const typingOptions = {
-    strings: ["Frontend Developer", "Full Stack Developer"],
-    typeSpeed: 90,
-    backSpeed: 70,
-    loop: true
-  };
-
-  // Initialize Typed.js for .typing2
-  new Typed(".typing2", typingOptions);
-
-  // Initialize Typed.js for .typing with slightly different settings
-  new Typed(".typing", {
-    strings: ["Frontend Developer", "Full Stack Developer"],
-    typeSpeed: 100,   // Slightly slower typing speed for this element
-    backSpeed: 80,    // Slightly slower backspacing speed for this element
-    loop: true
-  });
+  // (Typed.js initialized above)
 
 
 
-  // Toggle navbar/menu
-  $(".menu-btn").click(function () {
-    $(".navbar .menu").toggleClass("active");
-    $(".menu-btn i").toggleClass("active");
-  });
+  // (menu toggle handled above)
 
 
   $(document).ready(function () {
