@@ -142,11 +142,22 @@ $(document).ready(function () {
     });
   }
 
-  // Waypoints fade-in animation
-  $('.fadein').waypoint(function () {
-    $(this.element).addClass('animated fadeIn');
+  // Reveal each element when its own top edge enters the viewport.
+  const revealObserver = new IntersectionObserver(function (entries, observer) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('showme');
+        observer.unobserve(entry.target);
+      }
+    });
   }, {
-    offset: '90%'
+    root: null,
+    rootMargin: '0px 0px -10% 0px',
+    threshold: 0
+  });
+
+  document.querySelectorAll('.fadein:not(.showme)').forEach(function (element) {
+    revealObserver.observe(element);
   });
 
 
@@ -200,6 +211,32 @@ $(document).ready(function () {
 $(document).ready(function () {
   var navbar = $(".navbar");
   var scrollTimeout;
+
+  function updateNavbarOffset() {
+    var navbarHeight = navbar[0] ? navbar[0].getBoundingClientRect().height : 0;
+    document.documentElement.style.setProperty('--navbar-offset', (navbarHeight + 12) + 'px');
+  }
+
+  updateNavbarOffset();
+  $(window).on('resize', updateNavbarOffset);
+
+  $('.nav-link, .logo a').on('click', function (event) {
+    var targetId = $(this).attr('href');
+    if (!targetId || targetId === '#' || targetId.charAt(0) !== '#') return;
+
+    var target = document.querySelector(targetId);
+    if (!target) return;
+
+    event.preventDefault();
+    $('.nav-menu').removeClass('active');
+    $('.menu-toggle i').removeClass('fa-times').addClass('fa-bars');
+    updateNavbarOffset();
+
+    var offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--navbar-offset')) || 88;
+    var targetTop = target.getBoundingClientRect().top + window.scrollY - offset;
+    window.history.pushState(null, '', targetId);
+    window.scrollTo({ top: Math.max(0, targetTop), behavior: 'smooth' });
+  });
   
   // Smart navbar - shrink when scrolling, expand when stopped (always visible)
   $(window).scroll(function () {
@@ -226,17 +263,7 @@ $(document).ready(function () {
       $(".scroll-up-btn").removeClass("show");
     }
 
-    // Fade-in animation on scroll
-    $(".fadein").each(function () {
-      const bottomOfElement = $(this).offset().top + $(this).outerHeight();
-      const bottomOfWindow = $(window).scrollTop() + $(window).height();
-
-      if (bottomOfWindow > bottomOfElement) {
-        $(this).addClass("showme");
-      } else {
-        $(this).removeClass("showme");
-      }
-    });
+    updateNavbarOffset();
   });
 
   // Scroll-up functionality
@@ -324,32 +351,34 @@ image.addEventListener('mouseleave', () => {
 // Certificates scrollable area drag-scroll functionality
 const scrollContainer = document.getElementById("scrollable-area-certificates");
 
-let scrollAmount = 0;
-const scrollSpeed = 3;
-let isPaused = false;
+if (scrollContainer) {
+  let scrollAmount = 0;
+  const scrollSpeed = 3;
+  let isPaused = false;
 
-scrollContainer.addEventListener("mouseenter", () => {
-  isPaused = true;
-});
+  scrollContainer.addEventListener("mouseenter", () => {
+    isPaused = true;
+  });
 
-scrollContainer.addEventListener("mouseleave", () => {
-  isPaused = false;
-});
+  scrollContainer.addEventListener("mouseleave", () => {
+    isPaused = false;
+  });
 
-function autoScrollCertificates() {
-  if (!isPaused) {
-    scrollAmount += scrollSpeed;
-    scrollContainer.scrollLeft = scrollAmount;
+  function autoScrollCertificates() {
+    if (!isPaused) {
+      scrollAmount += scrollSpeed;
+      scrollContainer.scrollLeft = scrollAmount;
 
-    if (
-      scrollContainer.scrollLeft + scrollContainer.clientWidth >=
-      scrollContainer.scrollWidth
-    ) {
-      scrollAmount = 0;
+      if (
+        scrollContainer.scrollLeft + scrollContainer.clientWidth >=
+        scrollContainer.scrollWidth
+      ) {
+        scrollAmount = 0;
+      }
     }
+
+    requestAnimationFrame(autoScrollCertificates);
   }
 
-  requestAnimationFrame(autoScrollCertificates);
+  autoScrollCertificates();
 }
-
-autoScrollCertificates();
