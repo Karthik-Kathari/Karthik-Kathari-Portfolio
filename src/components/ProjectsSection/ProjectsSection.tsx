@@ -81,15 +81,6 @@ export const ProjectsSection = () => {
       gridClass: "md:col-span-5 h-[360px]",
     },
     {
-      id: 9,
-      title: "Your App",
-      subtitle: "Multi-feature application platform with responsive navigation and UI",
-      link: "https://your-apps-project.netlify.app",
-      image: publicAsset("Yourappimg.png"),
-      technologies: ["React", "Bootstrap", "JavaScript"],
-      gridClass: "md:col-span-7 h-[360px]",
-    },
-    {
       id: 10,
       title: "Weather Forecast",
       subtitle: "Real-time weather application powered by location and API data",

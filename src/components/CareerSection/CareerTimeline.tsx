@@ -1,30 +1,22 @@
 import { ScrollTimeline } from "../lightswind/scroll-timeline";
-import { Briefcase, Code2, Headset } from "lucide-react";
+import { Briefcase, Code2 } from "lucide-react";
 
 export const CareerTimeline = () => {
   const careerEvents = [
     {
-      year: "Jan 2026 – Present",
+      year: "On-Site | Aug 2024–Present",
       title: "Full Stack Developer",
-      subtitle: "Gray Material",
+      subtitle: "Bhushan Enterprises",
       description:
-        "Contributing to full-stack web application development across frontend, backend, APIs, databases, deployment, and product functionality using React.js, Node.js, Python, AWS, PostgreSQL, and CI/CD workflows.",
+        "Develop and maintain responsive web applications using React, Node.js, and Express.js. Integrate REST APIs, manage PostgreSQL and MongoDB databases, and support deployment, debugging, and performance optimization.",
       icon: <Code2 className="h-4 w-4 mr-2 text-primary" />,
     },
     {
-      year: "Feb 2024 – Nov 2025",
-      title: "IT Technical Support Engineer",
-      subtitle: "Bhushan Enterprises",
-      description:
-        "Provided technical support for software and web applications, troubleshooting system, application, network, database, server, and API-related issues while supporting business operations.",
-      icon: <Headset className="h-4 w-4 mr-2 text-primary" />,
-    },
-    {
-      year: "Dec 2024 – Apr 2025",
+      year: "Remote | Jan 2024–Jun 2024",
       title: "Frontend Developer Intern",
       subtitle: "Purezza Technologies",
       description:
-        "Built and improved responsive web interfaces while applying practical frontend development patterns with HTML5, CSS3, JavaScript, Bootstrap, and jQuery.",
+        "Build responsive interfaces using React, HTML, CSS, JavaScript, and Tailwind CSS. Create reusable UI components and interactive layouts, and integrate REST APIs to improve functionality and user experience.",
       icon: <Briefcase className="h-4 w-4 mr-2 text-primary" />,
     },
   ];
